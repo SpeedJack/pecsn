@@ -7,8 +7,8 @@ simple User
 		int posY = default(0);
 		int broadcastRadius = default(40);
 		int slotTime = default(10);
-		int slotDelay = default(5);
-		int trickleRelayCopies = default(3);
+		int slotDelay = default(10);
+		int maxCopies = default(3);
 		bool sendOnStart = default(false);
 	@display("p=$posX,$posY;r=$broadcastRadius");
 	gates:

@@ -14,6 +14,8 @@ private:
 	int remainingWaitSlots;
 	int copiesCount;
 
+	bool receivedMessage;
+
 	void sendMessageToNeighbors();
 	void handleSlotMessage(cMessage* msg);
 	void handleUserMessage(cMessage* msg);

@@ -8,8 +8,7 @@ void User::initialize()
 	int posY = par("posY").intValue();
 	EV << "My position is: " << posX << ", " << posY << "." << endl;
 	slot = new cMessage();
-	if (sendOnStart)
-		sendMessageOnStart = true;
+	receivedMessage = false;
 	scheduleAt(simTime(), slot);
 }
 
@@ -32,12 +31,29 @@ void User::handleSlotMessage(cMessage* msg)
 			message = nullptr;
 		}
 	}
+	int maxCopies = par("maxCopies").intValue();
+	if (message && remainingWaitSlots == 0 && copiesCount < maxCopies) {
+		sendMessageToNeighbors();
+		message = nullptr;
+	}
+	remainingWaitSlots--;
 	int slotTime = par("slotTime");
+	receivedMessage = false;
 	scheduleAt(simTime() + slotTime, slot);
 }
 
 void User::handleUserMessage(cMessage* msg)
 {
+	if (receivedMessage) {
+		bubble("COLLISION!");
+		message = nullptr;
+		return;
+	}
+	if (message)
+		return;
+	receivedMessage = true;
+	message = msg;
+	remainingWaitSlots = par("slotDelay").intValue();
 }
 
 void User::sendMessageToNeighbors()
