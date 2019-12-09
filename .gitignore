@@ -1,3 +1,12 @@
+# Oment config
+.qtenvrc
+
+# Omnet output
+out/
+
+# Binaries
+src/pecsn_dbg
+
 # Documentation output
 doc/*.pdf
 
