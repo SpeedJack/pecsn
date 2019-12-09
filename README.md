@@ -12,7 +12,7 @@ will hear it. A user that receives more than one message in the same slot will
 not be able to decode it (_collision_).
 
 Users relay the message they receive _once_, according to the following policy
-(_trickle relaying_): after the user successfully receives a message, it wats
+(_trickle relaying_): after the user successfully receives a message, it waits
 for a time window of _T_ slots. If during that time window it correctly
 receives less than _m_ copies of the same message, it relays it, otherwise it
 stops.
