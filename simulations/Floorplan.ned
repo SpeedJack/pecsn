@@ -1,17 +1,18 @@
 package pecsn.simulations;
 
+import pecsn.User;
+
 network Floorplan
 {
     parameters:
-        int userCount = default(30);
-        //int indexSendingNode = default(intuniform(0, userCount));
-        int sizeX = default(200);
-        int sizeY = default(200);
-        user[0].sendOnStart = true;
+        int userCount = default(10);
+        int indexStartingNode = default(intuniform(0, userCount-1));
+        int sizeX = default(50);
+        int sizeY = default(50);
         @display("bgb=$sizeX,$sizeY");
     submodules:
-        user[userCount]: pecsn.User {
-            posX = default(intuniform(0, sizeX));
-            posY = default(intuniform(0, sizeY));
-        };
+       user[userCount]: User {
+           posX = default(intuniform(0, sizeX));
+           posY = default(intuniform(0, sizeY));
+       };
 }
