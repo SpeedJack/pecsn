@@ -1,4 +1,7 @@
-# Oment config
+# Core files
+/simulations/core
+
+# Omnet config
 .qtenvrc
 
 # Omnet output
