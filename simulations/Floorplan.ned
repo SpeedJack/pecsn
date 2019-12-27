@@ -5,14 +5,14 @@ import pecsn.User;
 network Floorplan
 {
     parameters:
-        int userCount = default(10);
+        int userCount = default(60);
         int indexStartingNode = default(intuniform(0, userCount-1));
-        int sizeX = default(50);
-        int sizeY = default(50);
+        double sizeX @unit(m) = default(200m);
+        double sizeY @unit(m) = default(200m);
         @display("bgb=$sizeX,$sizeY");
     submodules:
        user[userCount]: User {
-           posX = default(intuniform(0, sizeX));
-           posY = default(intuniform(0, sizeY));
+           posX = default(uniform(0m, sizeX));
+           posY = default(uniform(0m, sizeY));
        };
 }

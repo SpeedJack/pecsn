@@ -3,12 +3,12 @@ package pecsn;
 simple User
 {
 	parameters:
-		int posX = default(0);
-		int posY = default(0);
-		int broadcastRadius = default(40);
-		int slotDuration = default(2);
-		int hearWindow = default(10);
-		int maxRelayDelay = default(3);
+		double posX @unit(m) = default(0m);
+		double posY @unit(m) = default(0m);
+		double broadcastRadius @unit(m) = default(40m);
+		double slotDuration @unit(s) = default(1s);
+		int hearWindow = default(5);
+		volatile int relayDelay = default(intuniform(0, 3));
 		int maxCopies = default(3);
 		bool sendOnStart = default(false);
 	@display("p=$posX,$posY;b=5,5,rect,#808080");

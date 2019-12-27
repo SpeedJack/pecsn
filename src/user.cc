@@ -10,6 +10,9 @@ User::User() : cSimpleModule()
 	receivedMessage = nullptr;
 	slotMessage = nullptr;
 
+	color = "#808080";
+	showRadius = false;
+
 	copiesCount = 0;
 	relayed = false;
 	collision = false;
@@ -18,16 +21,15 @@ User::User() : cSimpleModule()
 
 void User::initialize()
 {
-	int posX = par("posX").intValue();
-	int posY = par("posY").intValue();
+	posX = par("posX").doubleValue();
+	posY = par("posY").doubleValue();
 	EV << "My position is: " << posX << ", " << posY << "." << endl;
 
 	slotMessage = new cMessage();
 
-	slotDuration = par("slotDuration").intValue(); // TODO: use @unit
+	slotDuration = par("slotDuration").doubleValue();
 	hearWindow = par("hearWindow").intValue();
-	broadcastRadius = par("broadcastRadius").intValue();
-	maxRelayDelay = par("maxRelayDelay").intValue();
+	broadcastRadius = par("broadcastRadius").doubleValue();
 
 	sendOnStart = par("sendOnStart").boolValue();
 	int indexStartingNode = getParentModule()->par("indexStartingNode").intValue();
@@ -36,7 +38,7 @@ void User::initialize()
 	if (sendOnStart) {
 		EV << "sendOnStart=true." << endl;
 		if (hasGUI())
-			getDisplayString().setTagArg("b", 3, "blue");
+			color = "blue";
 	}
 
 	scheduleAt(simTime(), slotMessage); // start slotting now
@@ -44,8 +46,8 @@ void User::initialize()
 
 void User::handleMessage(cMessage *msg)
 {
-	if (hasGUI()) // TODO: handle visualization in refreshDisplay()
-		getDisplayString().removeTag("r");
+	if (hasGUI())
+		showRadius = false;
 	if (relayed) { // node stopped! do nothing
 		if (!msg->isSelfMessage())
 			delete msg;
@@ -70,28 +72,28 @@ void User::handleSlotMessage(cMessage* msg)
 
 	if (collision) {
 		if (hasGUI()) {
-			getDisplayString().setTagArg("b", 3, "red");
 			bubble("COLLISION!");
+			color = "red";
 		}
 		EV << "Collision!" << endl;
-	} else if (receivedMessage) { // correctly received a message
+	} else if (receivedMessage) {
 		EV << "Correctly heard a message." << endl;
-		if (savedMessage)
-			delete savedMessage;
-		savedMessage = receivedMessage->dup();
+		if (!savedMessage)
+			savedMessage = receivedMessage->dup();
 	}
 
 	if (savedMessage) {
 		if (hasGUI())
-			getDisplayString().setTagArg("b", 3, "blue");
+			color = "blue";
 		if (remainingWaitSlots == 0) {
-			relayDelay = 0 - intuniform(0, maxRelayDelay);
+			relayDelay = 0 - par("relayDelay").intValue();
 			windowOpen = false;
 		}
 		if (remainingWaitSlots == relayDelay)
 			relayMessage();
 		remainingWaitSlots--; // when it reaches 0, the time window T is elapsed
 	}
+
 	// new slot
 	collision = false;
 	if (receivedMessage)
@@ -103,17 +105,19 @@ void User::handleSlotMessage(cMessage* msg)
 // handle a user message
 void User::handleUserMessage(cMessage* msg)
 {
+	if (!windowOpen) {
+		delete msg;
+		return;
+	}
+
 	if (receivedMessage) { // message already received in current slot
 		collision = true;
 		delete msg;
 		return;
 	}
-	if (!windowOpen) {
-		delete msg;
-		return;
-	}
+
 	if (hasGUI())
-		getDisplayString().setTagArg("b", 3, "#808080");
+		color = "#808080";
 	receivedMessage = msg;
 	copiesCount++; // count the number of message copies received in time window T
 	EV << "copies count: " << copiesCount << endl;
@@ -126,7 +130,7 @@ void User::relayMessage()
 {
 	relayed = true;
 	if (hasGUI())
-		getDisplayString().setTagArg("b", 3, "green");
+		color = "green";
 	int maxCopies = par("maxCopies").intValue();
 	if (copiesCount > maxCopies) {
 		EV << "Too copies! Not relaying..." << endl;
@@ -136,7 +140,7 @@ void User::relayMessage()
 	}
 
 	if (hasGUI()) {
-		getDisplayString().setTagArg("r", 0, broadcastRadius);
+		showRadius = true;
 		bubble("SENDING MESSAGE!");
 	}
 	EV << "Relaying message..." << endl;
@@ -152,10 +156,10 @@ void User::relayMessage()
 			continue;
 
 		// compute distance
-		int userX = user->par("posX").intValue();
-		int userY = user->par("posY").intValue();
-		int Xdiff = posX - userX;
-		int Ydiff = posY - userY;
+		double userX = user->par("posX").doubleValue();
+		double userY = user->par("posY").doubleValue();
+		double Xdiff = posX - userX;
+		double Ydiff = posY - userY;
 		if (Xdiff * Xdiff + Ydiff * Ydiff <= (broadcastRadius * broadcastRadius)) {
 			EV << "Relaying to " << user->getFullName() << "." << endl;
 			neighborsCount++;
@@ -166,6 +170,16 @@ void User::relayMessage()
 	EV << "Message relayed to " << neighborsCount << " users." << endl;
 	delete savedMessage;
 	savedMessage = nullptr;
+}
+
+void User::refreshDisplay() const
+{
+	cDisplayString& ds = getDisplayString();
+	ds.setTagArg("b", 3, color);
+	if (showRadius)
+		ds.setTagArg("r", 0, broadcastRadius);
+	else
+		ds.removeTag("r");
 }
 
 void User::finish()

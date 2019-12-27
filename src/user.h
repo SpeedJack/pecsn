@@ -14,21 +14,23 @@ private:
 	cMessage* receivedMessage;
 	cMessage* slotMessage;
 
-	int posX;
-	int posY;
+	const char* color;
+	bool showRadius;
+
+	double posX;
+	double posY;
 
 	int remainingWaitSlots;
 	int copiesCount;
-	bool relayed;
-	bool collision;
 	bool windowOpen;
+	bool collision;
+	bool relayed;
 
 	bool sendOnStart;
-	int slotDuration;
+	double slotDuration;
 	int hearWindow;
 	int relayDelay;
-	int maxRelayDelay;
-	int broadcastRadius;
+	double broadcastRadius;
 
 	void relayMessage();
 	void handleSlotMessage(cMessage* msg);
@@ -36,6 +38,7 @@ private:
 protected:
 	virtual void initialize();
 	virtual void handleMessage(cMessage *msg);
+	virtual void refreshDisplay() const;
 	virtual void finish();
 public:
 	User();
