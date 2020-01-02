@@ -14,6 +14,8 @@ private:
 	cMessage* receivedMessage;
 	cMessage* slotMessage;
 
+	simsignal_t collisionCount;
+
 	const char* color;
 	bool showRadius;
 

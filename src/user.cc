@@ -27,6 +27,8 @@ void User::initialize()
 
 	slotMessage = new cMessage();
 
+	collisionCount = registerSignal("collisionCount");
+
 	slotDuration = par("slotDuration").doubleValue();
 	hearWindow = par("hearWindow").intValue();
 	broadcastRadius = par("broadcastRadius").doubleValue();
@@ -75,6 +77,7 @@ void User::handleSlotMessage(cMessage* msg)
 			bubble("COLLISION!");
 			color = "red";
 		}
+		emit(collisionCount, 1);
 		EV << "Collision!" << endl;
 	} else if (receivedMessage) {
 		EV << "Correctly heard a message." << endl;
