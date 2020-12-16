@@ -10,41 +10,41 @@ namespace pecsn
 class User: public cSimpleModule
 {
 private:
-	cMessage* savedMessage;
-	cMessage* receivedMessage;
-	cMessage* slotMessage;
+    cMessage* savedMessage;
+    cMessage* receivedMessage;
+    cMessage* slotMessage;
 
-	simsignal_t collisionCount;
+    simsignal_t collisions;
 
-	const char* color;
-	bool showRadius;
+    const char* color;
+    bool showRadius;
 
-	double posX;
-	double posY;
+    double posX;
+    double posY;
 
-	int remainingWaitSlots;
-	int copiesCount;
-	bool windowOpen;
-	bool collision;
-	bool relayed;
+    int remainingWaitSlots;
+    int copiesCount;
+    bool windowOpen;
+    bool collision;
+    bool relayed;
 
-	bool sendOnStart;
-	double slotDuration;
-	int hearWindow;
-	int relayDelay;
-	double broadcastRadius;
+    bool sendOnStart;
+    double slotDuration;
+    int hearWindow;
+    int relayDelay;
+    double broadcastRadius;
 
-	void relayMessage();
-	void handleSlotMessage(cMessage* msg);
-	void handleUserMessage(cMessage* msg);
+    void relayMessage();
+    void handleSlotMessage(cMessage* msg);
+    void handleUserMessage(cMessage* msg);
 protected:
-	virtual void initialize();
-	virtual void handleMessage(cMessage *msg);
-	virtual void refreshDisplay() const;
-	virtual void finish();
+    virtual void initialize();
+    virtual void handleMessage(cMessage *msg);
+    virtual void refreshDisplay() const;
+    virtual void finish();
 public:
-	User();
-	~User();
+    User();
+    ~User();
 };
 }
 

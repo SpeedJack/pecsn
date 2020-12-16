@@ -10,7 +10,7 @@ network Floorplan
         double sizeX @unit(m) = default(200m);
         double sizeY @unit(m) = default(200m);
         @display("bgb=$sizeX,$sizeY");
-        @statistic[collisionCount](record=count);
+
     submodules:
        user[userCount]: User {
            posX = default(uniform(0m, sizeX));
