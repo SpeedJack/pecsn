@@ -11,7 +11,8 @@ simple User
 		volatile int relayDelay = default(intuniform(0, 3));
 		int maxCopies = default(3);
 		bool sendOnStart = default(false);
-	@display("p=$posX,$posY;b=5,5,rect,#808080");
+		@display("p=$posX,$posY;b=5,5,rect,#808080");
+		@signal[collisions](type=long);
 	gates:
-	    input in @directIn;
+		input in @directIn;
 }
