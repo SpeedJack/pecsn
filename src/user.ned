@@ -8,11 +8,14 @@ simple User
 		double broadcastRadius @unit(m) = default(40m);
 		double slotDuration @unit(s) = default(1s);
 		int hearWindow = default(5);
+		//volatile int relayDelay = default(0);
 		volatile int relayDelay = default(intuniform(0, 3));
 		int maxCopies = default(3);
 		bool sendOnStart = default(false);
 		@display("p=$posX,$posY;b=5,5,rect,#808080");
-		@signal[collisions](type=long);
+		@signal[collisions];
+		@signal[infected];
+		@signal[time];
 	gates:
 		input in @directIn;
 }

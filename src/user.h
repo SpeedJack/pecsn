@@ -15,6 +15,8 @@ private:
     cMessage* slotMessage;
 
     simsignal_t collisions;
+    simsignal_t infected;
+    int time;
 
     const char* color;
     bool showRadius;

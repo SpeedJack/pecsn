@@ -11,6 +11,8 @@ network Floorplan
 		double sizeY @unit(m) = default(200m);
 		@display("bgb=$sizeX,$sizeY");
 		@statistic[collisionCount](source="collisions";record=count);
+		@statistic[coveredUsers](source="infected";record=count);
+		@statistic[broadcastTime](source="time";record=max);
 	submodules:
 		user[userCount]: User {
 			posX = default(uniform(0m, sizeX));

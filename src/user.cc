@@ -28,6 +28,8 @@ void User::initialize()
     slotMessage = new cMessage();
 
     collisions = registerSignal("collisions");
+    infected = registerSignal("infected");
+    time=registerSignal("time");
 
     slotDuration = par("slotDuration").doubleValue();
     hearWindow = par("hearWindow").intValue();
@@ -66,6 +68,7 @@ void User::handleMessage(cMessage *msg)
 void User::handleSlotMessage(cMessage* msg)
 {
     if (sendOnStart) { // I'm the node that sends the first message
+        emit(infected, 1);
         savedMessage = new cMessage();
         relayMessage();
         scheduleAt(simTime() + slotDuration, slotMessage);
@@ -82,7 +85,11 @@ void User::handleSlotMessage(cMessage* msg)
     } else if (receivedMessage) {
         EV << "Correctly heard a message." << endl;
         if (!savedMessage)
+        {
             savedMessage = receivedMessage->dup();
+            emit(infected, 1);
+            emit(time, simTime());
+        }
     }
 
     if (savedMessage) {
