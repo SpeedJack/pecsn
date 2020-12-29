@@ -1,5 +1,4 @@
 package pecsn.simulations;
 
-@namespace(simulations);
-
+@namespace(pecsn);
 @license(LGPL);

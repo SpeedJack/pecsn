@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for pecsn
+# OMNeT++/OMNEST Makefile for PECSN
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = pecsn$(D)$(EXE_SUFFIX)
+TARGET = PECSN$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)
@@ -30,7 +30,7 @@ PROJECTRELATIVE_PATH = src
 O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc, .msg and .sm files
-OBJS = $O/user.o
+OBJS = $O/oracle.o $O/user.o
 
 # Message files
 MSGFILES =

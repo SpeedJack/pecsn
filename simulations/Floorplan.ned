@@ -1,6 +1,7 @@
 package pecsn.simulations;
 
 import pecsn.User;
+import pecsn.Oracle;
 
 network Floorplan
 {
@@ -12,10 +13,12 @@ network Floorplan
 		@display("bgb=$sizeX,$sizeY");
 		@statistic[collisionCount](source="collisions";record=count);
 		@statistic[coveredUsers](source="infected";record=count);
-		@statistic[broadcastTime](source="time";record=max);
+		@statistic[totalBroadcastTime](source="time";record=max);
+		@statistic[quantileBroadcastTime](source="quantileTime";record=min);
 	submodules:
 		user[userCount]: User {
 			posX = default(uniform(0m, sizeX));
 			posY = default(uniform(0m, sizeY));
 		};
+		oracle: Oracle;
 }
