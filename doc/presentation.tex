@@ -1,0 +1,182 @@
+\documentclass{beamer}
+
+\usetheme{Boadilla}
+
+\title{Project of Performance Evaluation of Computer Systems and Networks}
+\subtitle{Epidemic Broadcast}
+\author{Ahmed Khalil A. Abdulwahed, Lorenzo Cima, Niccolò Scatena}
+\institute{University of Pisa}
+\date{2019/2020}
+
+\includeonly{%
+}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage{}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{Some Stuff}
+
+\begin{frame}
+	\frametitle{Lists}
+	\begin{enumerate}
+		\item Point A
+		\item Point B
+		\begin{description}
+			\item[Something] This is something
+			\item[Foo] This is foo
+		\end{description}
+		\item Point C
+		\begin{itemize}
+			\item First item
+			\item Second item
+		\end{itemize}
+		\item Point D
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Columns, Tables, Images}
+	\begin{columns}
+		\column{0.5\textwidth}
+		This is some text.
+
+		Second line of left text.
+
+		\begin{table}
+			\begin{tabular}{l | c | c}
+				First column & Second & Third \\
+				\hline \hline
+				Something & 110 & 123 \\
+				Second Row & abc & def
+			\end{tabular}
+			\caption{Some data}
+		\end{table}
+		\column{0.5\textwidth}
+		An image.
+
+		\includegraphics[scale=0.2]{img/marchio_unipi_pant541}
+	\end{columns}
+\end{frame}
+
+\section{Blocks}
+
+\begin{frame}
+	\frametitle{Basic Blocks}
+	\begin{block}{Block Title}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
+	\end{block}
+	\begin{alertblock}{Alert Title}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
+	\end{alertblock}
+	\begin{definition}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
+	\end{definition}
+	\begin{example}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
+	\end{example}
+\end{frame}
+
+\subsection{Other Blocks}
+
+\begin{frame}
+	\frametitle{Math Blocks}
+	\begin{theorem}{Pythagora}
+		\( a^2 + b^2 = c^2 \)
+	\end{theorem}
+	\begin{corollary}
+		\( x + y = y + x \)
+	\end{corollary}
+	\begin{proof}
+		\( \omega + \phi = \epsilon \)
+
+		\( \alpha + \beta = \frac{5}{7} \)
+	\end{proof}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Code Blocks}
+	\begin{semiverbatim}
+		#include <stdio.h>
+
+		int main ()
+		\{
+			printf("Hello World!\\n");
+			return 0;
+		\}
+	\end{semiverbatim}
+\end{frame}
+
+\section{Animations}
+
+\subsection{Pause}
+
+\begin{frame}
+	\frametitle{Pause}
+	\begin{itemize}
+		\pause{}
+		\item Point A
+		\pause{}
+		\item Point B
+		\begin{itemize}
+			\pause{}
+			\item part 1
+			\pause{}
+			\item part 2
+		\end{itemize}
+		\pause{}
+		\item Point C
+			\pause{}
+		\item Point D
+	\end{itemize}
+\end{frame}
+
+\subsection{Overlays}
+
+\begin{frame}
+	\frametitle{Overlays}
+	\textbf<2>{Example Text}\\
+	\textit<2>{Example Text}\\
+	\textsl<2>{Example Text}\\
+	\textrm<2>{Example Text}\\
+	\textsf<2>{Example Text}\\
+	\textcolor<2>{orange}{Example Text}\\
+	\alert<2>{Example Text}\\
+	\structure<2>{Example Text}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Overlays (invisible)}
+	\onslide<1->{First Line of Text}
+
+	\onslide<2->{Second Line of Text}
+
+	\onslide<3->{Third Line of Text}
+\end{frame}
+
+\setbeamercovered{transparent}
+
+\begin{frame}
+	\frametitle{Overlays (transparent)}
+	\onslide<1->{First Line of Text}
+
+	\onslide<2->{Second Line of Text}
+
+	\onslide<3->{Third Line of Text}
+
+\end{frame}
+
+\setbeamercovered{invisible}
+
+\end{document}

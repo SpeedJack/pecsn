@@ -15,14 +15,18 @@
 \RequirePackage{pdflscape}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
+\RequirePackage{float}
 \RequirePackage{titlesec}
 % TODO: add option to enable/disable caption formatting
 \RequirePackage[font=small,labelfont=bf,position=bottom]{caption}
+\RequirePackage{subcaption}
 \RequirePackage{amsmath}
+\RequirePackage{interval}
 \RequirePackage{array}
 \RequirePackage{makecell}
 \RequirePackage[inline]{enumitem}
 \RequirePackage{listings}
+\RequirePackage{nameref}
 \RequirePackage[english]{varioref}
 % TODO: control biblatex options with this package options
 \RequirePackage[hyperref=true,
@@ -44,6 +48,7 @@
 \def\@academicyear{}
 \def\@author{}
 \def\@authors{}
+\def\@institute{}
 \def\@class{}
 \def\@course{}
 \def\@subtitle{}
@@ -51,6 +56,7 @@
 
 \def\academicyear#1{\gdef\@academicyear{#1}}
 \def\authors#1{\gdef\@authors{#1}}
+\def\institute#1{\gdef\@institute{#1}}
 \def\class#1{\gdef\@class{#1}}
 \def\course#1{\gdef\@course{#1}}
 \def\subtitle#1{\gdef\@subtitle{#1}}
@@ -116,7 +122,11 @@
 \definecolor{codeblack}{rgb}{0.0,0.0,0.0}
 \definecolor{bgcolor}{rgb}{0.95,0.95,0.92}
 
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{gray75}{|}\hspace{20pt}}{0pt}{\Huge\bfseries}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}\textcolor{gray75}{|}}{20pt}{}
+\let\appendix@original\appendix
+\renewcommand{\appendix}{\appendix@original\titleformat{\chapter}[display]{\Huge\bfseries}{Appendix~\thechapter}{20pt}{}}
+
+\intervalconfig{soft open fences}
 
 \newcommand\code{\texttt}
 \newcommand\standout{\textbf}
@@ -127,6 +137,14 @@
 \WithSuffix\newcommand\exgratia*[1]{e.g.\ #1}
 \newcommand\etc{etc\textellipsis}
 
+\newcommand\chref[1]{Chapter~\ref{#1}\space\enquote{\nameref{#1}}}
+\newcommand\secref[1]{Section~\ref{#1}\space\enquote{\nameref{#1}}}
+\newcommand\figref[1]{Figure~\ref{#1}}
+\newcommand\lstref[1]{Listing~\ref{#1}}
+\newcommand\appendixref[1]{Appendix~\ref{#1}\space\enquote{\nameref{#1}}}
+\let\eqref@original\eqref
+\renewcommand{\eqref}[1]{Equation~\eqref@original{#1}}
+
 \renewcommand\theadalign{bl}
 \renewcommand\theadfont{\bfseries}
 \renewcommand{\cellalign}{l}
@@ -134,49 +152,55 @@
 \newcommand\theacademicyear{\@academicyear}
 \newcommand\theauthor{\@author}
 \newcommand\theauthors{\@authors}
+\newcommand\theinstitute{\@institute}
 \newcommand\theclass{\@class}
 \newcommand\thecourse{\@course}
 \newcommand\thesubtitle{\@subtitle}
 \newcommand\thetitle{\@title}
 
-\lstdefinestyle{javacode}{%
-	backgroundcolor=\color{bgcolor},
-	commentstyle=\color{codegreen},
-	keywordstyle=\bfseries\color{codeorange},
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codepurple},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+\definecolor{codebg}{HTML}{FDF6E3}
+\definecolor{codecomment}{HTML}{93A1A1}
+\definecolor{codestring}{HTML}{2AA198}
+\definecolor{codekeyword}{HTML}{859900}
+\definecolor{codelinenum}{HTML}{808080}
+\colorlet{codenumber}{magenta!60!black}
+
+\lstdefinestyle{ccode}{
+	backgroundcolor=\color{codebg},
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\color{codecomment},
+	stringstyle=\color{codestring},
+	keywordstyle=\color{codekeyword},
+	numberstyle=\tiny\color{codelinenum},
 	captionpos=b,
-	keepspaces=true,
+	language=c,
 	numbers=left,
 	numbersep=5pt,
+	stepnumber=1,
+	tabsize=2,
+	otherkeywords={float64_t},
+	breaklines=true,
+	breakatwhitespace=false,
+	keepspaces=true,
 	showspaces=false,
 	showstringspaces=false,
 	showtabs=false,
-	tabsize=2
+	%postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	literate=
+		*{0}{{{\color{codenumber}0}}}{1}
+		{1}{{{\color{codenumber}1}}}{1}
+		{2}{{{\color{codenumber}2}}}{1}
+		{3}{{{\color{codenumber}3}}}{1}
+		{4}{{{\color{codenumber}4}}}{1}
+		{5}{{{\color{codenumber}5}}}{1}
+		{6}{{{\color{codenumber}6}}}{1}
+		{7}{{{\color{codenumber}7}}}{1}
+		{8}{{{\color{codenumber}8}}}{1}
+		{9}{{{\color{codenumber}9}}}{1}
 }
-\lstdefinestyle{xmlcode}{%
-	backgroundcolor=\color{bgcolor},
-	commentstyle=\color{codegray},
-	keywordstyle=\color{codeblack},
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codeblack},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=2
-}
-%\lstset{style=javacode}
+
+\lstset{style=ccode}
+
+\institute{University of Pisa}
 
 \endinput
