@@ -1,4 +1,4 @@
 package pecsn;
 
 @namespace(pecsn);
-@license(LGPL);
+@license(MIT);

@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for PECSN
+# OMNeT++/OMNEST Makefile for pecsn
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = PECSN$(D)$(EXE_SUFFIX)
+TARGET = pecsn$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)

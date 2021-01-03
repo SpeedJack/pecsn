@@ -5,3 +5,4 @@
 # Core files
 simulations/core/
 
+.cmdenv-log
