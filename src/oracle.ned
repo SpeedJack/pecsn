@@ -2,10 +2,14 @@ package pecsn;
 
 simple Oracle
 {
-    parameters:   	
+	parameters:
+		@display("i=block/cogwheel;is=vs");
+
 		double slotDuration @unit(s) = default(1s);
-		int maxWaitTime = default(8); // sum of hearWindow + relayDelay
-		double quantile = default(0.9);
-	    @signal[quantileTime](type="double");
-	    @display("i=block/cogwheel;is=vs");
+		int timeout = default(8); // usually, user.hearWindow + max(user.relayDelay)
+
+		@signal[activityTimeSig](type="double");
+		@signal[coveredUsersSig](type="unsigned long");
+		@signal[rcvMsgsPerSlotSig](type="unsigned long");
+		@signal[sntMsgsPerSlotSig](type="unsigned long");
 }

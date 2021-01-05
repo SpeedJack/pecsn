@@ -2,30 +2,35 @@
 #define __PECSN_USER_H_
 
 #include <omnetpp.h>
+#include "oracle.h"
 
 using namespace omnetpp;
 
 namespace pecsn
 {
+
 class User: public cSimpleModule
 {
 private:
-    cMessage* savedMessage;
-    cMessage* receivedMessage;
-    cMessage* slotMessage;
+    Oracle *oracle;
+
+    cMessage *savedMessage;
+    cMessage *receivedMessage;
+    cMessage *slotMessage;
 
     simsignal_t collisions;
-    simsignal_t infected;
-    simsignal_t time;
+    simsignal_t copies;
+    simsignal_t reachedUsers;
 
-    const char* color;
+    const char *color;
     bool showRadius;
 
     double posX;
     double posY;
 
     int remainingWaitSlots;
-    int copiesCount;
+    unsigned long copiesCount;
+    unsigned long collisionsCount;
     bool windowOpen;
     bool collision;
     bool relayed;
@@ -37,17 +42,18 @@ private:
     double broadcastRadius;
 
     void relayMessage();
-    void handleSlotMessage(cMessage* msg);
-    void handleUserMessage(cMessage* msg);
+    void handleSlotMessage(cMessage *msg);
+    void handleUserMessage(cMessage *msg);
 protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
-    virtual void refreshDisplay() const;
     virtual void finish();
+    virtual void refreshDisplay() const;
 public:
     User();
     ~User();
 };
+
 }
 
 #endif

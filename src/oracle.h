@@ -2,31 +2,39 @@
 #define __PECSN_ORACLE_H_
 
 #include <omnetpp.h>
-#include "user.h"
 
 using namespace omnetpp;
 
-namespace pecsn {
+namespace pecsn
+{
 
 class Oracle : public cSimpleModule
 {
-  private:
-    int total; //number of users
-    int timer;
-    int count; //infected users
-    cMessage* slotMessage;
-    double slotDuration;
-    simsignal_t quantileTime;
-    double quantile;
-  protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-  public:
-    void registerUser();
-    void registerActivity();
-    void infectedUser();
-    Oracle();
-    ~Oracle();
+private:
+	cMessage* slotMessage;
+
+	simsignal_t activityTime;
+	simsignal_t coveredUsers;
+	simsignal_t rcvMsgsPerSlot;
+	simsignal_t sntMsgsPerSlot;
+
+	unsigned long registeredUsers;
+	unsigned long infectedUsers;
+	unsigned long receivedMessages;
+	unsigned long sentMessages;
+
+	int timeout;
+	double slotDuration;
+protected:
+	virtual void initialize();
+	virtual void handleMessage(cMessage *msg);
+public:
+	Oracle();
+	~Oracle();
+	void registerUser();
+	void registerMsgRcv();
+	void registerMsgSnt();
+	void registerInfection();
 };
 
 }

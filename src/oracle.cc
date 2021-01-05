@@ -1,56 +1,82 @@
 #include "oracle.h"
 
-namespace pecsn {
+namespace pecsn
+{
 
 Define_Module(Oracle);
 
 Oracle::Oracle() : cSimpleModule()
  {
-    total = 0;
-    count = 0;
-    slotMessage = new cMessage();
+    registeredUsers = 0;
+    infectedUsers = 0;
+    receivedMessages = 0;
+    sentMessages = 0;
+    slotMessage =  nullptr;
  }
 
 void Oracle::initialize()
 {
-    timer = par("maxWaitTime").intValue();
+    timeout = par("timeout").intValue();
     slotDuration = par("slotDuration").doubleValue();
-    quantile = par("quantile").doubleValue();
 
-    quantileTime = registerSignal("quantileTime");
+    activityTime = registerSignal("activityTimeSig");
+    coveredUsers = registerSignal("coveredUsersSig");
+    rcvMsgsPerSlot = registerSignal("rcvMsgsPerSlotSig");
+    sntMsgsPerSlot = registerSignal("sntMsgsPerSlotSig");
 
+    slotMessage = new cMessage();
+    slotMessage->setSchedulingPriority(1000);
     scheduleAt(simTime(), slotMessage); // slotting
 }
 
 void Oracle::handleMessage(cMessage *msg)
 {
-    if (!msg->isSelfMessage())
+    if (!msg->isSelfMessage()) {
+	   delete msg;
            return;
+    }
 
-    if(timer == 0)
+    if (infectedUsers > 0)
+	    emit(coveredUsers, infectedUsers);
+    emit(rcvMsgsPerSlot, receivedMessages);
+    emit(sntMsgsPerSlot, sentMessages);
+    if (receivedMessages > 0 || sentMessages > 0) {
+	    emit(activityTime, simTime().dbl());
+	    timeout = par("timeout").intValue(); //reset the timer
+    }
+    if(timeout == 0) {
+	EV << "[ORACLE] NO ACTIVITY: Reached timeout. (SimTime: " << simTime().dbl() << ")" << endl;
         endSimulation();
-    timer--;
+    }
+    timeout--;
+    receivedMessages = 0;
+    sentMessages = 0;
+    infectedUsers = 0;
     scheduleAt(simTime() + slotDuration, slotMessage);
 }
 
 void Oracle::registerUser()
 {
-    total++;
+    registeredUsers++;
+    EV << "[ORACLE] Registered a new user. (current: " << registeredUsers << ")" << endl;
 }
 
-void Oracle::registerActivity()
+void Oracle::registerMsgRcv()
 {
-    timer = par("maxWaitTime").intValue(); //reset the timer
+    receivedMessages++;
+    EV << "[ORACLE] User signals a new message received. (total in current slot: " << receivedMessages << ")" << endl;
 }
 
-void Oracle::infectedUser()
+void Oracle::registerMsgSnt()
 {
-    if(total == 0)
-        return;
-    count++;
-    double div = (double)count/total;
-    if(div >= quantile)
-        emit(quantileTime, simTime().dbl());
+    sentMessages++;
+    EV << "[ORACLE] User signals a new message sent. (total in current slot: " << sentMessages << ")" << endl;
+}
+
+void Oracle::registerInfection()
+{
+    infectedUsers++;
+    EV << "[ORACLE] New user infected. (current: " << infectedUsers << "/" << registeredUsers << ")" << endl;
 }
 
 Oracle::~Oracle()

@@ -1,5 +1,4 @@
 #include "user.h"
-#include "oracle.h"
 
 namespace pecsn
 {
@@ -16,6 +15,7 @@ User::User() : cSimpleModule()
     showRadius = false;
 
     copiesCount = 0;
+    collisionsCount = 0;
     relayed = false;
     collision = false;
     windowOpen = true;
@@ -27,17 +27,14 @@ void User::initialize()
     posY = par("posY").doubleValue();
     EV << "My position is: " << posX << ", " << posY << "." << endl;
 
-    cModule* temp;
-    temp = getModuleByPath("oracle");
-    Oracle* oracle;
-    oracle = check_and_cast<Oracle*>(temp);
-    oracle->registerUser(); //call oracle to register the new user
+
+    oracle = check_and_cast<Oracle *>(getModuleByPath("oracle"));
 
     slotMessage = new cMessage();
 
-    collisions = registerSignal("collisions");
-    infected = registerSignal("infected");
-    time = registerSignal("time");
+    collisions = registerSignal("collisionsSig");
+    copies = registerSignal("copiesSig");
+    reachedUsers = registerSignal("reachedUsersSig");
 
     slotDuration = par("slotDuration").doubleValue();
     hearWindow = par("hearWindow").intValue();
@@ -45,12 +42,13 @@ void User::initialize()
 
     sendOnStart = par("sendOnStart").boolValue();
     int indexStartingNode = getParentModule()->par("indexStartingNode").intValue();
-    if (indexStartingNode == getIndex())
-        sendOnStart = true;
-    if (sendOnStart) {
-        EV << "sendOnStart=true." << endl;
-        if (hasGUI())
-            color = "blue";
+    if (indexStartingNode == getIndex()) {
+	    sendOnStart = true;
+	    EV << "sendOnStart=true." << endl;
+	    if (hasGUI())
+		    color = "blue";
+    } else {
+	    oracle->registerUser();
     }
 
     scheduleAt(simTime(), slotMessage); // start slotting now
@@ -73,10 +71,9 @@ void User::handleMessage(cMessage *msg)
 }
 
 // handle slotting timer
-void User::handleSlotMessage(cMessage* msg)
+void User::handleSlotMessage(cMessage *msg)
 {
     if (sendOnStart) { // I'm the node that sends the first message
-        emit(infected, true);
         savedMessage = new cMessage();
         relayMessage();
         scheduleAt(simTime() + slotDuration, slotMessage);
@@ -88,20 +85,13 @@ void User::handleSlotMessage(cMessage* msg)
             bubble("COLLISION!");
             color = "red";
         }
-        emit(collisions, 1);
+        collisionsCount++;
         EV << "Collision!" << endl;
     } else if (receivedMessage) {
         EV << "Correctly heard a message." << endl;
         if (!savedMessage) {
             savedMessage = receivedMessage->dup();
-            emit(infected, true);
-            emit(time, simTime().dbl());
-
-            cModule* temp;
-            temp = getModuleByPath("oracle");
-            Oracle* oracle;
-            oracle = check_and_cast<Oracle*>(temp);
-            oracle->infectedUser(); //call oracle to say that a user is infected
+            oracle->registerInfection();
         }
     }
 
@@ -126,7 +116,7 @@ void User::handleSlotMessage(cMessage* msg)
 }
 
 // handle a user message
-void User::handleUserMessage(cMessage* msg)
+void User::handleUserMessage(cMessage *msg)
 {
     if (!windowOpen) {
         delete msg;
@@ -139,11 +129,7 @@ void User::handleUserMessage(cMessage* msg)
         return;
     }
 
-    cModule* temp;
-    temp = getModuleByPath("oracle");
-    Oracle* oracle;
-    oracle = check_and_cast<Oracle*>(temp);
-    oracle->registerActivity(); //call oracle because there is an event. The timer must restart
+    oracle->registerMsgRcv();
 
     if (hasGUI())
         color = "#808080";
@@ -161,6 +147,7 @@ void User::relayMessage()
     if (hasGUI())
         color = "green";
     int maxCopies = par("maxCopies").intValue();
+    emit(copies, copiesCount);
     if (copiesCount > maxCopies) {
         EV << "Too copies! Not relaying..." << endl;
         delete savedMessage;
@@ -168,25 +155,19 @@ void User::relayMessage()
         return;
     }
 
-    cModule* temp;
-    temp = getModuleByPath("oracle");
-    Oracle* oracle;
-    oracle = check_and_cast<Oracle*>(temp);
-    oracle->registerActivity(); //call oracle because there is an event. The timer must restart
-
     if (hasGUI()) {
         showRadius = true;
         bubble("SENDING MESSAGE!");
     }
     EV << "Relaying message..." << endl;
-    cModule* parent = getParentModule();
+    cModule *parent = getParentModule();
     int userCount = parent->par("userCount").intValue();
-    int neighborsCount = 0;
+    unsigned long neighborsCount = 0;
     for (int i = 0; i < userCount; i++) {
-        cModule* tmp = parent->getSubmodule("user", i);
+        cModule *tmp = parent->getSubmodule("user", i);
         if (!tmp)
             continue;
-        User* user = check_and_cast<User*>(tmp);
+        User* user = check_and_cast<User *>(tmp);
         if (user == this)
             continue;
 
@@ -202,6 +183,8 @@ void User::relayMessage()
             sendDirect(savedMessage->dup(), slotDuration / 2, 0, user, user->gateBaseId("in"));
         }
     }
+    emit(reachedUsers, neighborsCount);
+    oracle->registerMsgSnt();
     EV << "Message relayed to " << neighborsCount << " users." << endl;
     delete savedMessage;
     savedMessage = nullptr;
@@ -219,7 +202,7 @@ void User::refreshDisplay() const
 
 void User::finish()
 {
-    // TODO: collect statistics
+	emit(collisions, collisionsCount);
 }
 
 User::~User()
