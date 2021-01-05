@@ -5,14 +5,14 @@
 	\normalsize \textit{(trickle relaying)}
 \end{center}
 
-Consider a 2D floorplan with \(N\) users randomly dropped in it. A random user
-within the floorplan produces a \emph{message}, which should ideally reach all
-the users as soon as possible. Communications are \emph{slotted}, meaning that
-on each slot a user may or may not relay the message, and a message occupies an
-entire slot. A \emph{broadcast radius} \(R\) is defined, so that every receiver
-who is within a radius \(R\) from the transmitter will receive the message, and
-no other user will hear it. A user that receives more than one message in the
-same slot will not be able to decode it (\emph{collision}).
+\noindent Consider a 2D floorplan with \(N\) users randomly dropped in it. A
+random user within the floorplan produces a \emph{message}, which should ideally
+reach all the users as soon as possible. Communications are \emph{slotted},
+meaning that on each slot a user may or may not relay the message, and a message
+occupies an entire slot. A \emph{broadcast radius} \(R\) is defined, so that
+every receiver who is within a radius \(R\) from the transmitter will receive
+the message, and no other user will hear it. A user that receives more than one
+message in the same slot will not be able to decode it (\emph{collision}).
 
 Users relay the message they receive \emph{once}, according to the following
 policy (\emph{trickle relaying}): after the user successfully receives a
@@ -34,7 +34,7 @@ results are obtained.
 	problem with trickle relaying.
 
 	As defined above, all neighbors users of a sender receive the message in
-	the same slot and then they all waits for the same time window of \(T\)
+	the same slot and then they all wait for the same time window of \(T\)
 	slots before relaying the message. This leads to an issue where all the
 	users relay the message in time slots multiple of \(T\) while the entire
 	network stays silent in all other slots.

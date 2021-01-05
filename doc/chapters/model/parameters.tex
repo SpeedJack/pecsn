@@ -1,1 +1,54 @@
 \section{Parameters}\label{sec:parameters}
+
+\begin{itemize}
+	\item \standout{Floorplan}:
+		\begin{description}
+			\item[userCount] \textit{(int)} The number \(N\) of
+				users inside the network (default: \code{60}).
+			\item[sizeX] \textit{(meters)} The horizontal size of
+				the floorplan (default: \code{200m}).
+			\item[sizeY] \textit{(meters)} The vertical size of the
+				floorplan (default: \code{200m}).
+			\item[indexStartingNode] \textit{(int distribution)} A
+				random number generated from a distribution to
+				select a random user to broadcast the message at
+				the start of the simulation (default:
+				\code{intuniform(0, userCount-1)}).
+		\end{description}
+	\item \standout{User}:
+		\begin{description}
+			\item[posX] \textit{(meters)} The X-axis position of the
+				user in the floorplan (default: set by Floorplan
+				as \code{uniform(0m, sizeX)}).
+			\item[posY] \textit{(meters)} The Y-axis position of the
+				user in the floorplan (default: set by Floorplan
+				as \code{uniform(0m, sizeY)}).
+			\item[sendOnStart] \textit{(bool)} Specifies if the user
+				should send out the message at the start of
+				simulation (default: \code{false}).
+			\item[slotDuration] \textit{(seconds)} The duration of a
+				time slot (default: \code{1s}).
+			\item[broadcastRadius] \textit{(meters)} The broadcast
+				radius \(R\) (default: \code{40m}).
+			\item[hearWindow] \textit{(int)} The time window of
+				\(T\) slots that the user should wait before
+				relaying the message (default: \code{5}).
+			\item[maxCopies] \textit{(int)} The maximum number of
+				copies \(m\) that the user can receive to decide
+				to relay the message (default: \code{3}).
+			\item[relayDelay] \textit{(int distribution)} The number
+				of time slots \(\delta\) to add to the time
+				window \(T\) before relaying the message
+				(default: \code{intuniform(0, 3)}).
+		\end{description}
+	\item \standout{Oracle}:
+		\begin{description}
+			\item[slotDuration] \textit{(seconds)} The duration of a
+				time slot. It should be equal to
+				\code{User.slotDuration}.
+			\item[timeout] \textit{(int)} The number of time slots
+				with no network activity the oracle must wait
+				before stopping the simulation. It should be
+				\(\geq T+\max(\delta)\).
+		\end{description}
+\end{itemize}

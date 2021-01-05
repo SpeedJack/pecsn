@@ -1,5 +1,17 @@
 \chapter{Model}\label{ch:model}
 
+From the specifications described in \chref{ch:specs} we have defined the
+following modules that compound the model:
+\begin{description}
+	\item[Floorplan] The \emph{network} representing the 2D floorplan and
+		containing the users.
+	\item[User] A \emph{submodule} representing a user in the system.
+\end{description}
+
+Additionally, to end the simulation when all reachable users have been infected
+and to collect some statistics about the entire floorplan, we have added an
+\standout{Oracle} module.
+
 \input{model/parameters}
 \input{model/statistics}
 \input{model/implementation}
