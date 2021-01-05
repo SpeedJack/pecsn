@@ -21,6 +21,7 @@
 \RequirePackage[font=small,labelfont=bf,position=bottom]{caption}
 \RequirePackage{subcaption}
 \RequirePackage{amsmath}
+\RequirePackage{tcolorbox}
 \RequirePackage{interval}
 \RequirePackage{array}
 \RequirePackage{makecell}
@@ -72,12 +73,12 @@
 		\begin{center}
 			\includegraphics[width=0.7\textwidth]{img/marchio_unipi_pant541}\\
 			\vspace{0.5cm}
-			\ifx\@class\@empty \else
-			{\LARGE\@class\\}
+			\ifx\@course\@empty \else
+			{\LARGE\@course\\}
 			\fi
 			\vspace{1cm}
-			\ifx\@course\@empty \else
-			{\Large\@course\\}
+			\ifx\@class\@empty \else
+			{\Large\@class\\}
 			\fi
 			\vfill
 			\ifx\@title\@empty \else
@@ -136,6 +137,7 @@
 \newcommand\exgratia[1]{(e.g.\ #1)}
 \WithSuffix\newcommand\exgratia*[1]{e.g.\ #1}
 \newcommand\etc{etc\textellipsis}
+\newcommand\omnetpp{\specialname{OMNeT++}}
 
 \newcommand\chref[1]{Chapter~\ref{#1}\space\enquote{\nameref{#1}}}
 \newcommand\secref[1]{Section~\ref{#1}\space\enquote{\nameref{#1}}}
