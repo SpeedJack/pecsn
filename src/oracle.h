@@ -11,7 +11,7 @@ namespace pecsn
 class Oracle : public cSimpleModule
 {
 private:
-	cMessage* slotMessage;
+	cMessage *slotMessage;
 
 	simsignal_t activityTime;
 	simsignal_t coveredUsers;

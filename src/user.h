@@ -12,46 +12,46 @@ namespace pecsn
 class User: public cSimpleModule
 {
 private:
-    Oracle *oracle;
+	Oracle *oracle;
 
-    cMessage *savedMessage;
-    cMessage *receivedMessage;
-    cMessage *slotMessage;
+	cMessage *savedMessage;
+	cMessage *receivedMessage;
+	cMessage *slotMessage;
 
-    simsignal_t collisions;
-    simsignal_t copies;
-    simsignal_t reachedUsers;
+	simsignal_t collisions;
+	simsignal_t copies;
+	simsignal_t reachedUsers;
 
-    const char *color;
-    bool showRadius;
+	const char *color;
+	bool showRadius;
 
-    double posX;
-    double posY;
+	double posX;
+	double posY;
 
-    int remainingWaitSlots;
-    unsigned long copiesCount;
-    unsigned long collisionsCount;
-    bool windowOpen;
-    bool collision;
-    bool relayed;
+	int remainingWaitSlots;
+	unsigned long copiesCount;
+	unsigned long collisionsCount;
+	bool windowOpen;
+	bool collision;
+	bool relayed;
 
-    bool sendOnStart;
-    double slotDuration;
-    int hearWindow;
-    int relayDelay;
-    double broadcastRadius;
+	bool sendOnStart;
+	double slotDuration;
+	int hearWindow;
+	int relayDelay;
+	double broadcastRadius;
 
-    void relayMessage();
-    void handleSlotMessage(cMessage *msg);
-    void handleUserMessage(cMessage *msg);
+	void relayMessage();
+	void handleSlotMessage(cMessage *msg);
+	void handleUserMessage(cMessage *msg);
 protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-    virtual void finish();
-    virtual void refreshDisplay() const;
+	virtual void initialize();
+	virtual void handleMessage(cMessage *msg);
+	virtual void finish();
+	virtual void refreshDisplay() const;
 public:
-    User();
-    ~User();
+	User();
+	~User();
 };
 
 }
