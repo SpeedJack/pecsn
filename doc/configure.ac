@@ -20,8 +20,9 @@ AC_LATEX_PACKAGE_FONTENC
 AC_LATEX_PACKAGE_AMSMATH
 AC_LATEX_PACKAGES_REQUIRE([babel, inputenc, lmodern, csquotes, microtype,
 	geometry, etoolbox, suffix, minibox, pdflscape, xcolor, graphicx,
-	titlesec, caption, interval, array, makecell, enumitem, listings,
-	nameref, varioref, hyperref, biblatex])
+	float, titlesec, caption, subcaption, tcolorbox, interval, array,
+	makecell, enumitem, listings, nameref, varioref, hyperref, biblatex,
+	gitinfo2])
 
 # Checks for libraries.
 
