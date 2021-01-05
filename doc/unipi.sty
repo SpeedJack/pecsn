@@ -39,6 +39,7 @@
 	bibstyle=authortitle,
 	sorting=nty]{biblatex}
 \RequirePackage[hidelinks]{hyperref}
+\RequirePackage{gitinfo2}
 
 % TODO: add options to specify other paths
 \def\input@path{{./chapters/}}
@@ -105,6 +106,8 @@
 				}\fi
 			\end{minipage}
 			\vfill
+			\textit{Revision: \gitBranch-\gitFirstTagDescribe}
+			\vspace{0.3cm}
 			\ifx\@academicyear\@empty \else
 			{\large Academic Year \@academicyear}
 			\fi
