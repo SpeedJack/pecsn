@@ -1,21 +1,21 @@
-<mxfile host="app.diagrams.net" modified="2021-01-06T18:13:07.015Z" agent="5.0 (X11)" etag="HFt472iCprHZX5_SxoKt" version="14.1.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-06T20:19:48.831Z" agent="5.0 (X11)" etag="Zgi7hOyim6muNED12zln" version="14.1.8" type="github">
   <diagram id="XDfhbqoKv3kXoQ3CfKQV" name="fsmdiagram">
     <mxGraphModel dx="1414" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="690" pageHeight="980" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-24" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-1" target="FalnZaQ2TrxE-8h338ZE-2">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-24" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" parent="1" source="FalnZaQ2TrxE-8h338ZE-1" target="FalnZaQ2TrxE-8h338ZE-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="230" y="120" />
-              <mxPoint x="230" y="120" />
+              <mxPoint x="220" y="145" />
+              <mxPoint x="220" y="145" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-1" value="&lt;b&gt;IDLE&lt;/b&gt;&lt;br&gt;&lt;i&gt;counter=0&lt;br&gt;slotcount=0&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;" vertex="1" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-1" value="&lt;b&gt;IDLE&lt;/b&gt;&lt;br&gt;&lt;i&gt;counter=0&lt;br&gt;slotcount=0&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="65" y="100" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-19" value="SLOT&lt;br&gt;&lt;i&gt;slotcount++&lt;br&gt;counter++&lt;/i&gt;" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;curved=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-2" target="FalnZaQ2TrxE-8h338ZE-4">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-19" value="SLOT&lt;br&gt;&lt;i&gt;slotcount++&lt;br&gt;counter++&lt;/i&gt;" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;curved=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" source="FalnZaQ2TrxE-8h338ZE-2" target="FalnZaQ2TrxE-8h338ZE-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="350" y="230" />
@@ -23,18 +23,18 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-25" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-2" target="FalnZaQ2TrxE-8h338ZE-3">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-25" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" parent="1" source="FalnZaQ2TrxE-8h338ZE-2" target="FalnZaQ2TrxE-8h338ZE-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="440" y="120" />
-              <mxPoint x="440" y="120" />
+              <mxPoint x="430" y="145" />
+              <mxPoint x="430" y="145" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-2" value="RECEIVING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-2" value="RECEIVING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="280" y="100" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-23" value="SLOT&lt;br&gt;[counter &amp;gt; 0]&lt;br&gt;&lt;i&gt;slotcount++&lt;/i&gt;" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=bottom;align=center;verticalAlign=top;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-4">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-23" value="SLOT&lt;br&gt;[counter &amp;gt; 0]&lt;br&gt;&lt;i&gt;slotcount++&lt;/i&gt;" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-4" edge="1">
           <mxGeometry x="-0.6461" y="-15" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="555" y="280" />
@@ -42,7 +42,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-26" value="SLOT&lt;br&gt;[counter = 0]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-26" value="SLOT&lt;br&gt;[counter = 0]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="530" y="30" />
@@ -50,10 +50,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-3" value="COLLISION" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-3" value="COLLISION" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="500" y="100" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-20" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-2">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-20" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="300" y="230" />
@@ -61,7 +61,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-21" value="SLOT&lt;br&gt;[slotcount = T+δ&lt;br&gt;&amp;amp;&amp;amp; counter &amp;lt;= m]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-5">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-21" value="SLOT&lt;br&gt;[slotcount = T+δ&lt;br&gt;&amp;amp;&amp;amp; counter &amp;lt;= m]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="220" y="305" />
@@ -69,7 +69,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-22" value="SLOT&lt;br&gt;[slotcount = T+δ&lt;br&gt;&amp;amp;&amp;amp; counter &amp;gt; m]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-7">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-22" value="SLOT&lt;br&gt;[slotcount = T+δ&lt;br&gt;&amp;amp;&amp;amp; counter &amp;gt; m]" style="edgeStyle=orthogonalEdgeStyle;curved=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-7" edge="1">
           <mxGeometry x="0.0145" y="-20" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="325" y="440" />
@@ -77,39 +77,39 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-4" value="HEARING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-4" value="HEARING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;fontStyle=1;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="280" y="260" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-14" value="RELAYED" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;horizontal=0;labelBackgroundColor=none;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-5" target="FalnZaQ2TrxE-8h338ZE-7">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-14" value="SLOT" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;horizontal=1;labelBackgroundColor=none;" parent="1" source="FalnZaQ2TrxE-8h338ZE-5" target="FalnZaQ2TrxE-8h338ZE-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-5" value="RELAYING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1;dashed=1;" vertex="1" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-5" value="RELAYING" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;fontStyle=1;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="65" y="260" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-9" value="" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;" edge="1" source="FalnZaQ2TrxE-8h338ZE-8" parent="1" target="FalnZaQ2TrxE-8h338ZE-1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-9" value="" style="html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;" parent="1" source="FalnZaQ2TrxE-8h338ZE-8" target="FalnZaQ2TrxE-8h338ZE-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="130" y="130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-12" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-12" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="90" width="40" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-8" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="FalnZaQ2TrxE-8h338ZE-12">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-8" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="FalnZaQ2TrxE-8h338ZE-12" vertex="1">
           <mxGeometry x="5" y="20" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-10" value="START" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="FalnZaQ2TrxE-8h338ZE-12">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-10" value="START" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="FalnZaQ2TrxE-8h338ZE-12" vertex="1">
           <mxGeometry width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-13" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-13" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="90" y="430" width="40" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-7" value="ss" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="FalnZaQ2TrxE-8h338ZE-13">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-7" value="ss" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="FalnZaQ2TrxE-8h338ZE-13" vertex="1">
           <mxGeometry x="5" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-11" value="STOP" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="FalnZaQ2TrxE-8h338ZE-13">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-11" value="STOP" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="FalnZaQ2TrxE-8h338ZE-13" vertex="1">
           <mxGeometry y="30" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-15" value="SLOT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;curved=1;labelBackgroundColor=none;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-1" target="FalnZaQ2TrxE-8h338ZE-1">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-15" value="SLOT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;curved=1;labelBackgroundColor=none;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" source="FalnZaQ2TrxE-8h338ZE-1" target="FalnZaQ2TrxE-8h338ZE-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="30" y="120" />
@@ -117,7 +117,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-16" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-3">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-16" value="MSG" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" source="FalnZaQ2TrxE-8h338ZE-3" target="FalnZaQ2TrxE-8h338ZE-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="630" y="120" />
@@ -125,13 +125,31 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="FalnZaQ2TrxE-8h338ZE-17" value="SLOT&lt;br&gt;&lt;i&gt;slotcount++&lt;br&gt;&lt;/i&gt;[slotcount &amp;lt; T+δ]" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" edge="1" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-4">
+        <mxCell id="FalnZaQ2TrxE-8h338ZE-17" value="SLOT&lt;br&gt;&lt;i&gt;slotcount++&lt;br&gt;&lt;/i&gt;[slotcount &amp;lt; T+δ]" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=open;endFill=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" source="FalnZaQ2TrxE-8h338ZE-4" target="FalnZaQ2TrxE-8h338ZE-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="420" y="300" />
               <mxPoint x="420" y="340" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-5" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="370" y="380" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;fontStyle=1;strokeColor=#b85450;" vertex="1" parent="zyVsZglIUT9Q7VDJDJ6q-5">
+          <mxGeometry width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-3" value="INFECTED" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="zyVsZglIUT9Q7VDJDJ6q-5">
+          <mxGeometry x="30" y="5" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-6" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="370" y="420" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;fontStyle=1" vertex="1" parent="zyVsZglIUT9Q7VDJDJ6q-6">
+          <mxGeometry width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zyVsZglIUT9Q7VDJDJ6q-4" value="NOT INFECTED" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="zyVsZglIUT9Q7VDJDJ6q-6">
+          <mxGeometry x="30" y="5" width="100" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
