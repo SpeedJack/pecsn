@@ -59,3 +59,20 @@
 				\(\geq T+\max(\delta)\).
 		\end{description}
 \end{itemize}
+
+\begin{tcolorbox}[title=Note]
+	Since users only operates at time slot intervals, the parameter
+	\code{slotDuration} does not affect the behavior and the performance of
+	the network in any way. The only effect is that times \exgratia{total
+	broadcast time} are scaled, so we will fix this parameter to \(1s\). In
+	this way, each second of simulation time represents a time slot and the
+	analysis become easier since, by default, \omnetpp{} records emitted
+	signals with the timestamp at with emission occur.
+
+	Of course this is not the case in a real system (probably each slot is
+	much more shorter than 1 second) but this decision will not break any
+	consideration made by our analysis, except for the time scaling effect.
+
+	In the following we may use the terms ``1 slot'' and ``1 second''
+	interchangeably.
+\end{tcolorbox}

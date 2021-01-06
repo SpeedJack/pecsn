@@ -20,7 +20,7 @@ respectively, the parameters \code{maxCopies}, \code{hearWindow} and
 We note that in our implementation of the \code{User} module, the transmission
 of the message exchanged between users (\code{MSG}) does not really occupies an
 entire slot (we have set its propagation delay equal to
-\(\frac{\textrm{slotDuration}}{2}\)) in order to guarantee the order of events:
+\(\textrm{slotDuration}/2\)) in order to guarantee the order of events:
 exchanged messages between users always come before self-messages used for
 slotting, thus ensuring that the message is received in the current slot. In any
 case, actual actions that the user should perform after a message is received
@@ -37,3 +37,21 @@ with all other nodes when emitting statistic signals and to decrease the
 last slot. In order to ensure that the oracle always runs after all other nodes,
 its self-messages used for slotting have been set to a lower scheduling
 priority.
+
+\figref{fig:snapshot} shows a snapshot of our model running in the \omnetpp{} QT
+environment at \(t = X\) with the configuration named ``DocExample'' available
+in \code{simulations/tests.ini}. \code{IDLE} and \code{RECEIVING} states are
+represented by the \textcolor{idle}{\textbf{gray}} color; \code{HEARING} state
+is represented by the \textcolor{hearing}{\textbf{blue}} color; \code{COLLISION}
+state is represented by the \textcolor{collision}{\textbf{red}} color;
+\code{RELAYING} state is represented by a circle surrounding the user that shows
+the broadcast radius (only users inside this circle will be reached); Stopped
+users are represented by the \textcolor{relayed}{\textbf{green}} color.
+
+\begin{figure}[htb]
+	\centering
+	INSERT IMAGE HERE
+	%\includegraphics[width=\textwidth]{img/snapshot}
+	\caption{Snapshot of our model running with the configuration
+	``DocExample'' in the \omnetpp{} QT environment}\label{fig:snapshot}
+\end{figure}
