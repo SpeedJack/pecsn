@@ -34,8 +34,15 @@
 				\(T\) slots that the user should wait before
 				relaying the message (default: \code{5}).
 			\item[maxCopies] \textit{(int)} The maximum number of
-				copies \(m\) that the user can receive to decide
-				to relay the message (default: \code{3}).
+				copies \(m\) that the user can receive to
+				decide to relay the message (default: \code{3}).
+				Note that our model counts also the first
+				message as a ``copy'', but this is not an issue
+				since the problem defined in \chref{ch:specs}
+				says ``less than \(m\) copies'' (\emph{strict}
+				constraint) while here we talk about the
+				``maximum number of copies (including first
+				message)'' (\emph{loose} constraint).
 			\item[relayDelay] \textit{(int distribution)} The number
 				of time slots \(\delta\) to add to the time
 				window \(T\) before relaying the message
