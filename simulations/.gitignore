@@ -1,7 +1,3 @@
-# Sim results
-*.sca
-*.anf
-
 # Core files
 simulations/core/
 
