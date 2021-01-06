@@ -1,5 +1,11 @@
 \section{Model implementation}\label{sec:implementation}
 
+Implementation of the \code{User} and \code{Oracle} modules are available in the
+\code{src/} folder. The definition of the \code{Floorplan} network is available
+in the \code{simulations/} folder, along with configuration files for tests
+(\code{tests.ini}) and simulations used for the analysis
+(\code{simulations.ini}).
+
 The main module of our implementation is the \code{User} module, so we will
 start discussing it first.
 
@@ -39,14 +45,14 @@ its self-messages used for slotting have been set to a lower scheduling
 priority.
 
 \figref{fig:snapshot} shows a snapshot of our model running in the \omnetpp{} QT
-environment at \(t = X\) with the configuration named ``DocExample'' available
-in \code{simulations/tests.ini}. \code{IDLE} and \code{RECEIVING} states are
-represented by the \textcolor{idle}{\textbf{gray}} color; \code{HEARING} state
-is represented by the \textcolor{hearing}{\textbf{blue}} color; \code{COLLISION}
-state is represented by the \textcolor{collision}{\textbf{red}} color;
-\code{RELAYING} state is represented by a circle surrounding the user that shows
-the broadcast radius (only users inside this circle will be reached); Stopped
-users are represented by the \textcolor{relayed}{\textbf{green}} color.
+environment at \(t = X\) with the configuration ``DocExample''
+(\code{tests.ini}). \code{IDLE} and \code{RECEIVING} states are represented by
+the \textcolor{idle}{\textbf{gray}} color; \code{HEARING} state is represented
+by the \textcolor{hearing}{\textbf{blue}} color; \code{COLLISION} state is
+represented by the \textcolor{collision}{\textbf{red}} color; \code{RELAYING}
+state is represented by a circle surrounding the user that shows the broadcast
+radius (only users inside this circle will be reached); Stopped users are
+represented by the \textcolor{relayed}{\textbf{green}} color.
 
 \begin{figure}[htb]
 	\centering
