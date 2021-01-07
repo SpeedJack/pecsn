@@ -3,11 +3,24 @@
 To ensure that our implementation does not contains bug and correctly implements
 the model we have performed various tests:
 \begin{description}
-	\item[Memory Check] Valgrind.
-	\item[Graphical Test] \ldots.
-	\item[Step-by-Step Debug] \ldots.
-	\item[Event Trace Check] \ldots.
-	\item[Degenerancy Test] \ldots.
+	\item[Memory Check] We have used Valgrind on all tests defined in
+		\code{tests.ini} to verify that there were no bad memory
+		accesses and memory leaks.
+	\item[Graphical Test] We have run the ``Simple'' configuration in the
+		\omnetpp{} QT environment to check visually that the network
+		works as expected. We have also collected statistics for these
+		runs and checked that they are consistent with what we have seen
+		in the graphical environment.
+	\item[Step-by-Step Debug] We have also debugged the ``Simple''
+		configuration step-by-step to check that our code takes the
+		expected code path.
+	\item[Event Trace Check] For the ``Simple'' configuration we have also
+		logged and verified the event trace in order to ensure that
+		events are scheduled in the correct order.
+	\item[Deterministic Test] We have run the ``Deterministic''
+		configuration in multiple repetitions and verified that the
+		results were the same for all runs.
 	\item[Continuity Test] \ldots.
 	\item[Consistency Test] \ldots.
+	\item[Degeneracy Test] \ldots.
 \end{description}
