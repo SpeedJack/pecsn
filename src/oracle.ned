@@ -10,6 +10,5 @@ simple Oracle
 
 		@signal[activityTimeSig](type="double");
 		@signal[coveredUsersSig](type="unsigned long");
-		@signal[rcvMsgsPerSlotSig](type="unsigned long");
-		@signal[sntMsgsPerSlotSig](type="unsigned long");
+		@signal[msgsPerSlotSig](type="unsigned long");
 }

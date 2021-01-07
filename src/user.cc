@@ -16,6 +16,7 @@ User::User() : cSimpleModule()
 
 	copiesCount = 0;
 	collisionsCount = 0;
+	slotCollisionsCount = 1;
 	relayed = false;
 	collision = false;
 	windowOpen = true;
@@ -33,6 +34,7 @@ void User::initialize()
 	slotMessage = new cMessage();
 
 	collisions = registerSignal("collisionsSig");
+	totalCollisions = registerSignal("totalCollisionsSig");
 	copies = registerSignal("copiesSig");
 	reachedUsers = registerSignal("reachedUsersSig");
 
@@ -87,6 +89,7 @@ void User::handleSlotMessage(cMessage *msg)
 			color = "red";
 		}
 		collisionsCount++;
+		emit(totalCollisions, slotCollisionsCount);
 		EV << "Collision!" << endl;
 	} else if (receivedMessage) {
 		EV << "Correctly heard a message." << endl;
@@ -110,6 +113,7 @@ void User::handleSlotMessage(cMessage *msg)
 
 	// new slot
 	collision = false;
+	slotCollisionsCount = 1;
 	if (receivedMessage)
 		delete receivedMessage;
 	receivedMessage = nullptr;
@@ -125,12 +129,11 @@ void User::handleUserMessage(cMessage *msg)
 	}
 
 	if (receivedMessage) { // message already received in current slot
+		slotCollisionsCount++;
 		collision = true;
 		delete msg;
 		return;
 	}
-
-	oracle->registerMsgRcv();
 
 	if (hasGUI())
 		color = "#808080";

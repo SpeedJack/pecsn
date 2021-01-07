@@ -19,6 +19,7 @@ private:
 	cMessage *slotMessage;
 
 	simsignal_t collisions;
+	simsignal_t totalCollisions;
 	simsignal_t copies;
 	simsignal_t reachedUsers;
 
@@ -31,6 +32,7 @@ private:
 	int remainingWaitSlots;
 	unsigned long copiesCount;
 	unsigned long collisionsCount;
+	unsigned long slotCollisionsCount;
 	bool windowOpen;
 	bool collision;
 	bool relayed;

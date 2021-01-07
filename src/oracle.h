@@ -15,12 +15,10 @@ private:
 
 	simsignal_t activityTime;
 	simsignal_t coveredUsers;
-	simsignal_t rcvMsgsPerSlot;
-	simsignal_t sntMsgsPerSlot;
+	simsignal_t msgsPerSlot;
 
 	unsigned long registeredUsers;
 	unsigned long infectedUsers;
-	unsigned long receivedMessages;
 	unsigned long sentMessages;
 
 	int timeout;

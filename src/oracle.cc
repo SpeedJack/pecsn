@@ -9,7 +9,6 @@ Oracle::Oracle() : cSimpleModule()
 {
 	registeredUsers = 0;
 	infectedUsers = 0;
-	receivedMessages = 0;
 	sentMessages = 0;
 	slotMessage = nullptr;
 }
@@ -21,8 +20,7 @@ void Oracle::initialize()
 
 	activityTime = registerSignal("activityTimeSig");
 	coveredUsers = registerSignal("coveredUsersSig");
-	rcvMsgsPerSlot = registerSignal("rcvMsgsPerSlotSig");
-	sntMsgsPerSlot = registerSignal("sntMsgsPerSlotSig");
+	msgsPerSlot = registerSignal("msgsPerSlotSig");
 
 	slotMessage = new cMessage();
 	slotMessage->setSchedulingPriority(1000);
@@ -38,9 +36,8 @@ void Oracle::handleMessage(cMessage *msg)
 
 	if (infectedUsers > 0)
 		emit(coveredUsers, infectedUsers);
-	emit(rcvMsgsPerSlot, receivedMessages);
-	emit(sntMsgsPerSlot, sentMessages);
-	if (receivedMessages > 0 || sentMessages > 0) {
+	emit(msgsPerSlot, sentMessages);
+	if (sentMessages > 0) {
 		emit(activityTime, simTime().dbl());
 		timeout = par("timeout").intValue(); //reset the timer
 	}
@@ -49,7 +46,6 @@ void Oracle::handleMessage(cMessage *msg)
 		endSimulation();
 	}
 	timeout--;
-	receivedMessages = 0;
 	sentMessages = 0;
 	infectedUsers = 0;
 	scheduleAt(simTime() + slotDuration, slotMessage);
@@ -61,16 +57,10 @@ void Oracle::registerUser()
 	EV << "[ORACLE] Registered a new user. (current: " << registeredUsers << ")" << endl;
 }
 
-void Oracle::registerMsgRcv()
-{
-	receivedMessages++;
-	EV << "[ORACLE] User signals a new message received. (total in current slot: " << receivedMessages << ")" << endl;
-}
-
 void Oracle::registerMsgSnt()
 {
 	sentMessages++;
-	EV << "[ORACLE] User signals a new message sent. (total in current slot: " << sentMessages << ")" << endl;
+	EV << "[ORACLE] User signaled a new message sent. (total in current slot: " << sentMessages << ")" << endl;
 }
 
 void Oracle::registerInfection()

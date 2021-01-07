@@ -16,24 +16,29 @@ related to the entire \code{Floorplan} network:
 		successfully heard the message}. A value with timestamp is
 		recorded in each slot along with the sum of all values (the
 		total number of infected users at the end of the simulation).
-	\item[rcvMsgsPerSlot] For each slot, the number of messages that have
-		been successfully heard by users. Also general statistics
-		\idest{mean, stddev, min, max, \etc} are recorded.
-	\item[sntMsgsPerSlot] For each slot, the number of users who sent out
-		the message. General statistics are also recorded.
+		This also allows us to compute percentiles of network coverage
+		by processing vectorial data.
+	\item[msgsPerSlot] For each slot, the number of users who sent out
+		the message. Histogram and general statistics \idest{mean,
+		stddev, min, max, sum, \etc} are also recorded.
 \end{description}
 
-The following statistics are collecte by the \code{User} module and are mainly
+The following statistics are collected by the \code{User} module and are mainly
 related to the single user in the simulation:
 \begin{description}
-	\item[collisions] The number of collision registered by the user.
-		General statistics are collected along with the sum of all
-		collisions in the entire network.
+	\item[collisions] The number of collisions registered by the user.
+		Histogram and general statistics are collected along with the
+		sum of all collisions in the entire network.
+	\item[totalCollisions] The number of colliding messages registered by
+		the user in each slot \exgratia{If a user receives three copies
+		of the same message they count as 3 total collisions}. Also
+		histogram and the total sum of the network are collected.
 	\item[copies] The number of copies of the message successfully heard by
 		the user during the time window between the reception of the
-		message and the time at which the user relays it. General
-		statistics are collected.
+		message and the time at which the user relays it. Histogram and
+		general statistics are collected.
 	\item[reachedUsers] When a user relays the message, it signals the
 		number of users reached (regardless of whether they correctly
-		hear the message or not). General statistics are collected.
+		hear the message or not). Values for each message sent,
+		histogram and general statistics are collected.
 \end{description}
