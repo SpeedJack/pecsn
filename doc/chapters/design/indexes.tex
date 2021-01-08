@@ -4,8 +4,14 @@ We have defined the following performance indexes:
 \begin{description}
 	\item[Total broadcast time] (\(t_B\)) \ldots.
 	\item[Percentage of covered users] (\(\mathit{\%U}\)) \ldots.
-	\item[Energy efficiency] (\(\mathit{Eff}\)) \ldots.
+	\item[Energy efficiency] (\(\mathit{Eff}\)) \ldots (TODO\@: we may
+		define \(\mathit{Eff}\) as an index based on the broadcast
+		radius (larger radius, more energy used) and the number of
+		transmissions (\code{msgsPerSlot}) in the network (more
+		transmission, more energy). This may be relevant since a network
+		setup that broadcast a message in the same time of another setup
+		using less energy is more efficient).
 	\item[Total number of collisions] (\(C\)) \ldots (note: can not be used
-		to compare scenarios with different numbers of users; remove or
-		normalize?).
+		to compare scenarios with different numbers of users; at least,
+		not without proper normalization).
 \end{description}
