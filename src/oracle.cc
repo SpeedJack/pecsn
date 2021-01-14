@@ -54,7 +54,7 @@ void Oracle::handleMessage(cMessage *msg)
 void Oracle::registerUser()
 {
 	registeredUsers++;
-	EV << "[ORACLE] Registered a new user. (current: " << registeredUsers << ")" << endl;
+	EV << "[ORACLE] Registered a new user. (total: " << registeredUsers << ")" << endl;
 }
 
 void Oracle::registerMsgSnt()
@@ -66,7 +66,7 @@ void Oracle::registerMsgSnt()
 void Oracle::registerInfection()
 {
 	infectedUsers++;
-	EV << "[ORACLE] New user infected. (current: " << infectedUsers << "/" << registeredUsers << ")" << endl;
+	EV << "[ORACLE] New user infected. (total in current slot: " << infectedUsers << ")" << endl;
 }
 
 Oracle::~Oracle()

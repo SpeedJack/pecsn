@@ -22,9 +22,9 @@
     </listAttribute>
     <stringAttribute key="org.omnetpp.launch.ADDITIONAL_ARG" value=""/>
     <intAttribute key="org.omnetpp.launch.BATCH_SIZE" value="1"/>
-    <intAttribute key="org.omnetpp.launch.BUILD_BEFORE_LAUNCH" value="2"/>
+    <intAttribute key="org.omnetpp.launch.BUILD_BEFORE_LAUNCH" value="0"/>
     <stringAttribute key="org.omnetpp.launch.CMDENV_EXPRESS_MODE" value=""/>
-    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="General"/>
+    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="Simple"/>
     <stringAttribute key="org.omnetpp.launch.EXECUTABLE" value="/pecsn/src/pecsn"/>
     <stringAttribute key="org.omnetpp.launch.IMAGE_PATH" value="${opp_image_path:/pecsn/simulations}"/>
     <stringAttribute key="org.omnetpp.launch.INI_FILES" value="tests.ini"/>
@@ -43,6 +43,6 @@
     <stringAttribute key="org.omnetpp.launch.STOP_BATCH_ON_ERROR" value=""/>
     <intAttribute key="org.omnetpp.launch.SWITCH_CONFIG_BEFORE_BUILD" value="1"/>
     <stringAttribute key="org.omnetpp.launch.USER_INTERFACE" value="Cmdenv"/>
-    <booleanAttribute key="org.omnetpp.launch.USE_BATCHING" value="true"/>
+    <booleanAttribute key="org.omnetpp.launch.USE_BATCHING" value="false"/>
     <stringAttribute key="org.omnetpp.launch.WORKING_DIRECTORY" value="/pecsn/simulations"/>
 </launchConfiguration>

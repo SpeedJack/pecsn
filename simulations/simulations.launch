@@ -8,9 +8,11 @@
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/pecsn/simulations/omnetpp.ini"/>
         <listEntry value="/pecsn/simulations/simulations.ini"/>
+        <listEntry value="/pecsn/simulations/tests.ini"/>
         <listEntry value="/pecsn"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
         <listEntry value="1"/>
         <listEntry value="1"/>
         <listEntry value="4"/>
@@ -24,7 +26,7 @@
     <intAttribute key="org.omnetpp.launch.BATCH_SIZE" value="1"/>
     <intAttribute key="org.omnetpp.launch.BUILD_BEFORE_LAUNCH" value="0"/>
     <stringAttribute key="org.omnetpp.launch.CMDENV_EXPRESS_MODE" value=""/>
-    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="Example"/>
+    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="SimBase"/>
     <stringAttribute key="org.omnetpp.launch.EXECUTABLE" value="/pecsn/src/pecsn"/>
     <stringAttribute key="org.omnetpp.launch.IMAGE_PATH" value="${opp_image_path:/pecsn/simulations}"/>
     <stringAttribute key="org.omnetpp.launch.INI_FILES" value="simulations.ini"/>
