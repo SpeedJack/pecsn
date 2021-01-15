@@ -1,7 +1,2 @@
 # Repeatable results
 repeatable-results/
-
-# Core files
-simulations/core/
-
-.cmdenv-log

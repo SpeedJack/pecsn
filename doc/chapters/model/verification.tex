@@ -22,7 +22,16 @@ the model we have performed various tests:
 	\item[Deterministic Test] We have run the ``Deterministic''
 		configuration in multiple repetitions and verified that the
 		results were the same for all runs.
-	\item[Continuity Test] \ldots.
-	\item[Consistency Test] \ldots.
-	\item[Degeneracy Test] \ldots.
+	\item[Degeneracy Test] We have run the ``UserDegeneracy'' configuration
+		and tested that the network simply does nothing and all recorded
+		statistics are equal to zero with zero users, while only a
+		message is sent (not heard by anyone) with one user. We have run
+		the ``NoRadius'' configuration and checked that the first user
+		sending the message is not able to reach anyone. We have run the
+		``Unreachable'' configuration (two users at long distance) and
+		verified that the user sending out the message is not able to
+		reach the other.
+	\item[Continuity Test] We have run the ``Continuity'' configuration and
+		verified that all the measured quantities increase as the number
+		of users increases.
 \end{description}

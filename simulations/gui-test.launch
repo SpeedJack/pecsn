@@ -24,7 +24,7 @@
     <intAttribute key="org.omnetpp.launch.BATCH_SIZE" value="1"/>
     <intAttribute key="org.omnetpp.launch.BUILD_BEFORE_LAUNCH" value="0"/>
     <stringAttribute key="org.omnetpp.launch.CMDENV_EXPRESS_MODE" value=""/>
-    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="DocExample"/>
+    <stringAttribute key="org.omnetpp.launch.CONFIG_NAME" value="Default"/>
     <stringAttribute key="org.omnetpp.launch.EXECUTABLE" value="/pecsn/src/pecsn"/>
     <stringAttribute key="org.omnetpp.launch.IMAGE_PATH" value="${opp_image_path:/pecsn/simulations}"/>
     <stringAttribute key="org.omnetpp.launch.INI_FILES" value="tests.ini"/>
