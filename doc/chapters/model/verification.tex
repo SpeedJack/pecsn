@@ -33,5 +33,18 @@ the model we have performed various tests:
 		reach the other.
 	\item[Continuity Test] We have run the ``Continuity'' configuration and
 		verified that all the measured quantities increase as the number
-		of users increases.
+		of users increases. As an example, in \figref{fig:continuity}
+		we can see that the total broadcast time and the number of
+		collisions increase with the number of users in the network. We
+		note that the test has been performed by varying the total
+		number of user but keeping the user density fixed \idest{by
+		keeping the \(\frac{N}{A}\) ration fixed}.
 \end{description}
+
+\begin{figure}[htb]
+	\centering
+	\verb|\includegraphics[width=\textwidth]{img/continuity}|
+	\caption{Continuity test for the total broadcast time and the total
+	number of collisions when the number of users in the network
+	increases}\label{fig:continuity}
+\end{figure}

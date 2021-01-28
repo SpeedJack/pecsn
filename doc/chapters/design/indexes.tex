@@ -2,16 +2,31 @@
 
 We have defined the following performance indexes:
 \begin{description}
-	\item[Total broadcast time] (\(t_B\)) \ldots.
-	\item[Percentage of covered users] (\(\mathit{\%U}\)) \ldots.
-	\item[Energy efficiency] (\(\mathit{Eff}\)) \ldots (TODO\@: we may
-		define \(\mathit{Eff}\) as an index based on the broadcast
-		radius (larger radius, more energy used) and the number of
-		transmissions (\code{msgsPerSlot}) in the network (more
-		transmission, more energy). This may be relevant since a network
-		setup that broadcast a message in the same time of another setup
-		using less energy is more efficient).
-	\item[Total number of collisions] (\(C\)) \ldots (note: can not be used
-		to compare scenarios with different numbers of users; at least,
-		not without proper normalization).
+	\item[Total broadcast time] (\(t_B\)) The time required in order to
+		deliver the message to all reachable users.
+	\item[Percentage of covered users] (\(\mathit{\%U}\)) The number of
+		users infected.
+	\item[Energy efficiency] (\(\mathit{Eff}\)) We define the energy
+		efficiency as an index that decreases with the increase of the
+		broadcast radius \(R\) and the total number of transmissions
+		\(M\). We will not develop a well-defined mathematical formula
+		for the energy efficiency of wireless communications; we will
+		just state that \(\mathit{Eff} \propto \frac{1}{R \cdot M}\). Of
+		corse, this index is of great interest in wireless ad-hoc
+		networks where each communicating device must optimize the
+		energy used in order to avoid frequent battery recharges or
+		replacements. Moreover, we note that from the point of view of a
+		single user of our model, where the user must relay the message
+		at most one time only, the only factor affecting this index is
+		\(R\). So our network should try to minimize \(R\) in order to
+		maximize the energy efficiency. We may consider the total number
+		of transmissions only to evaluate the efficiency of the
+		\emph{entire} network.
+	\item[Total number of collisions] (\(C\)) The total number of
+		collisions. This is of course highly related to the number of
+		users in the network. We must consider that a network with an
+		higher user density may have an higher number of collisions. So
+		this index may not be user to compare the performance of
+		networks with different number of users (at least, not without
+		normalization).
 \end{description}

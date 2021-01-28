@@ -3,13 +3,46 @@
 We have identified the following factors that may affect the performance of the
 system:
 \begin{description}
-	\item[Floorplan area] (\(A\)) \ldots.
-	\item[Floorplan X/Y ratio] (\(\frac{X}{Y}\)) \ldots.
-	\item[Users density] (\(\frac{N}{A}\)) \ldots.
-	\item[Broadcast radius] (\(R\)) \ldots (note: related to users density).
-	\item[Hear window] (\(T\)) \ldots.
-	\item[Relay delay] (\(\delta\)) \ldots (we must consider this: higher
-		relay delay reduces the number of collisions but increments the
-		total broadcast time).
-	\item[Maximum copies] (\(m\)) \ldots.
+	\item[Floorplan area] (\(A\)) The area of the floorplan. We expect this
+		to affect the total broadcast time (more area to cover; higher
+		broadcast time). In the following, we will consider this as a
+		fixed parameter, since we make the assumption that the area of
+		the floorplan is ``given by the problem'' (we have to cover a
+		given area with an optimized network). So we will not consider
+		the floorplan area as a tunable factor.
+	\item[Floorplan X/Y ratio] (\(\frac{X}{Y}\)) The ratio between the two
+		dimensions of the floorplan. This makes the floorplan more
+		crushed rectangle when \(\frac{X}{Y} \neq 1\). While when
+		\(\frac{X}{Y} = 1\) the floorplan is a square. It may affect all
+		the performance indexes defined in \secref{sec:indexes}. For the
+		same considerations above, we will not consider this a tunable
+		factor.
+	\item[Users density] (\(\frac{N}{A}\)) We expect that each performance
+		index increases with the number of users in the floorplan. We
+		will not consider this a tunable factor: in a real world
+		scenario we may have a given number of users (even variable over
+		time, but not chosen when the network is installed) to cover.
+		Anyway, we will still analyze how the performances of the
+		network change when the user density is changed.
+	\item[Broadcast radius] (\(R\)) We expect this factor to affect all the
+		performance indexes defined in \secref{sec:indexes}, in
+		particular the energy efficiency and the total number of
+		collisions. Also the percentage of covered users may be highly
+		affected by the broadcast radius (indirectly, due to the high
+		number of collisions with higher radius; and directly, due to
+		the lower number of reached users with low values of \(R\)). Of
+		course, the broadcast time is affected since an higher \(R\)
+		\emph{may} reduce the broadcast time (if collisions are not
+		increased too much).
+		This factor may be tuned to improve the performance of the
+		network.
+	\item[Hear window] (\(T\)) The hear window may affect the total
+		broadcast time, the total number of collisions and, combined
+		with the maximum copies factor, the energy efficiency. This
+		factor may be tuned to improve the performance of the network.
+	\item[Relay delay] (\(\delta\)) We expect this factor to affect mainly
+		the total broadcast time and the number of collisions.
+	\item[Maximum copies] (\(m\)) This factor may mainly affect the total
+		number of collisions, the energy efficiency and the total
+		broadcast time.
 \end{description}
