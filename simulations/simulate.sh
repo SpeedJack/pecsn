@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
-VECTORS=false
+VECTORS=true
 REPEAT=10
-while getopts s:c:o:r:v flag
+while getopts s:c:o:r:n flag
 do
 	case "${flag}" in
 		s) SCENARIO=${OPTARG};;
 		c) CONFIGNAME=${OPTARG};;
 		o) OUTNAME=${OPTARG};;
 		r) REPEAT=${OPTARG};;
-		v) VECTORS=true;;
+		n) VECTORS=false;;
 	esac
 done
 

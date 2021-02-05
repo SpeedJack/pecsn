@@ -151,7 +151,8 @@ void User::relayMessage()
 	if (hasGUI())
 		color = "green";
 	int maxCopies = par("maxCopies").intValue();
-	emit(copies, copiesCount);
+	if (copiesCount > 0)
+		emit(copies, copiesCount);
 	if (copiesCount > maxCopies) {
 		EV << "Too copies! Not relaying..." << endl;
 		delete savedMessage;
