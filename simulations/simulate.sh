@@ -1,14 +1,23 @@
 #!/bin/bash
 set -e
+RUNNER=opp_runall
+SCAVETOOL=scavetool
+RESULTDIR=results
+ANALYSISDIR=../analysis
+EXPDATAFOLDER=exported_data
+
 VECTORS=true
-REPEAT=10
-while getopts s:c:o:r:n flag
+INIFILE=simulations.ini
+REPEAT=
+OUTNAME=data
+while getopts s:c:o:r:tn flag
 do
 	case "${flag}" in
 		s) SCENARIO=${OPTARG};;
 		c) CONFIGNAME=${OPTARG};;
 		o) OUTNAME=${OPTARG};;
-		r) REPEAT=${OPTARG};;
+		r) REPEAT=--repeat=${OPTARG};;
+		t) INIFILE=tests.ini;;
 		n) VECTORS=false;;
 	esac
 done
@@ -17,15 +26,14 @@ if [ -z "$SCENARIO" ] || [ -z "$CONFIGNAME" ]; then
 	echo '-c and -s parameters are required.'
 	exit
 fi
-if [ -z "$OUTBASENAME" ]; then
-	OUTBASENAME=$CONFIGNAME
-fi
 
-rm -rf results/$CONFIGNAME
-./run -c $CONFIGNAME -f simulations.ini -u Cmdenv --repeat=$REPEAT
-mkdir -p ../analysis/$SCENARIO/exported_data
+rm -rf $RESULTDIR/$CONFIGNAME
+
+$RUNNER -j $(nproc) ../src/pecsn -n .:../src -c $CONFIGNAME -f $INIFILE -u Cmdenv $REPEAT
+
+mkdir -p $ANALYSISDIR/$SCENARIO/$EXPDATAFOLDER
 if [ "$VECTORS" = true ]; then
-	scavetool x results/$CONFIGNAME/*.{sca,vec} -o ../analysis/$SCENARIO/exported_data/$OUTNAME.csv
+	$SCAVETOOL x $RESULTDIR/$CONFIGNAME/*.{sca,vec} -o $ANALYSISDIR/$SCENARIO/$EXPDATAFOLDER/$OUTNAME.csv
 else
-	scavetool x results/$CONFIGNAME/*.sca -o ../analysis/$SCENARIO/exported_data/$OUTNAME.csv
+	$SCAVETOOL x $RESULTDIR/$CONFIGNAME/*.sca -o $ANALYSISDIR/$SCENARIO/$EXPDATAFOLDER/$OUTNAME.csv
 fi

@@ -1,3 +1,5 @@
-# Repeatable results
-repeatable-results/
-results/
+*.sca
+*.vec
+*.vci
+*.elog
+*.out

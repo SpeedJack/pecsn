@@ -1,3 +1,5 @@
+# Ignore Test scenario
+Test/
 # Ignore figures
 *.png
 

@@ -41,6 +41,7 @@ void User::initialize()
 	slotDuration = par("slotDuration").doubleValue();
 	hearWindow = par("hearWindow").intValue();
 	broadcastRadius = par("broadcastRadius").doubleValue();
+	relayDelay = 0 - par("relayDelay").intValue();
 
 	sendOnStart = par("sendOnStart").boolValue();
 	int indexStartingNode = getParentModule()->par("indexStartingNode").intValue();
@@ -84,15 +85,12 @@ void User::handleSlotMessage(cMessage *msg)
 	}
 
 	if (collision) {
-		if (hasGUI()) {
-			bubble("COLLISION!");
-			color = "red";
-		}
 		collisionsCount++;
 		emit(totalCollisions, slotCollisionsCount);
 		EV << "Collision!" << endl;
 	} else if (receivedMessage) {
 		EV << "Correctly heard a message." << endl;
+		copiesCount++; // count the number of message copies received in time window T
 		if (!savedMessage) {
 			savedMessage = receivedMessage->dup();
 			oracle->registerInfection();
@@ -102,13 +100,13 @@ void User::handleSlotMessage(cMessage *msg)
 	if (savedMessage) {
 		if (hasGUI())
 			color = "blue";
-		if (remainingWaitSlots == 0) {
-			relayDelay = 0 - par("relayDelay").intValue();
+		if (windowOpen && remainingWaitSlots == 0)
 			windowOpen = false;
-		}
-		if (remainingWaitSlots == relayDelay)
+		if (!windowOpen && remainingWaitSlots == relayDelay)
 			relayMessage();
-		remainingWaitSlots--; // when it reaches 0, the time window T is elapsed
+		remainingWaitSlots--;
+	} else if (hasGUI()) {
+		color = "#808080";
 	}
 
 	// new slot
@@ -131,6 +129,10 @@ void User::handleUserMessage(cMessage *msg)
 	if (receivedMessage) { // message already received in current slot
 		slotCollisionsCount++;
 		collision = true;
+		if (hasGUI()) {
+			bubble("COLLISION!");
+			color = "red";
+		}
 		delete msg;
 		return;
 	}
@@ -138,8 +140,6 @@ void User::handleUserMessage(cMessage *msg)
 	if (hasGUI())
 		color = "#808080";
 	receivedMessage = msg;
-	copiesCount++; // count the number of message copies received in time window T
-	EV << "copies count: " << copiesCount << endl;
 	if (!savedMessage) // it's a new message
 		remainingWaitSlots = hearWindow;
 }
@@ -148,17 +148,21 @@ void User::handleUserMessage(cMessage *msg)
 void User::relayMessage()
 {
 	relayed = true;
-	if (hasGUI())
-		color = "green";
 	int maxCopies = par("maxCopies").intValue();
-	if (copiesCount > 0)
+	if (copiesCount > 0) {
+		EV << "copies count: " << copiesCount << endl;
 		emit(copies, copiesCount);
+	}
 	if (copiesCount > maxCopies) {
 		EV << "Too copies! Not relaying..." << endl;
 		delete savedMessage;
 		savedMessage = nullptr;
+		copiesCount = 0;
+		if (hasGUI())
+			color = "green";
 		return;
 	}
+	copiesCount = 0;
 
 	if (hasGUI()) {
 		showRadius = true;
@@ -188,6 +192,8 @@ void User::relayMessage()
 			sendDirect(savedMessage->dup(), slotDuration / 2, 0, user, user->gateBaseId("in"));
 		}
 	}
+	if (hasGUI())
+		color = "green";
 	emit(reachedUsers, neighborsCount);
 	oracle->registerMsgSnt();
 	EV << "Message relayed to " << neighborsCount << " users." << endl;

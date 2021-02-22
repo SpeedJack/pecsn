@@ -47,10 +47,10 @@ private:
 	void handleSlotMessage(cMessage *msg);
 	void handleUserMessage(cMessage *msg);
 protected:
-	virtual void initialize();
-	virtual void handleMessage(cMessage *msg);
-	virtual void finish();
-	virtual void refreshDisplay() const;
+	virtual void initialize() override;
+	virtual void handleMessage(cMessage *msg) override;
+	virtual void finish() override;
+	virtual void refreshDisplay() const override;
 public:
 	User();
 	~User();

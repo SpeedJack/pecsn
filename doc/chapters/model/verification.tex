@@ -18,10 +18,13 @@ the model we have performed various tests:
 		expected code path.
 	\item[Event Trace Check] For the ``Simple'' configuration we have also
 		logged and verified the event trace in order to ensure that
-		events are scheduled in the correct order.
-	\item[Deterministic Test] We have run the ``Deterministic''
-		configuration in multiple repetitions and verified that the
-		results were the same for all runs.
+		events are scheduled in the correct order.  \item[Deterministic
+		Test] We have run the ``Deterministic'' configuration in
+		multiple repetitions and verified that the results were the same
+		for all runs\footnote{File
+		\code{analysis/DeterministicTest/zero-variance-test.ipynb}
+		contains the full analysis for this test. It checks that all the
+		residuals for each observation are zero.}.
 	\item[Degeneracy Test] We have run the ``UserDegeneracy'' configuration
 		and tested that the network simply does nothing and all recorded
 		statistics are equal to zero with zero users, while only a
@@ -33,18 +36,42 @@ the model we have performed various tests:
 		reach the other.
 	\item[Continuity Test] We have run the ``Continuity'' configuration and
 		verified that all the measured quantities increase as the number
-		of users increases. As an example, in \figref{fig:continuity}
-		we can see that the total broadcast time and the number of
-		collisions increase with the number of users in the network. We
-		note that the test has been performed by varying the total
-		number of user but keeping the user density fixed \idest{by
-		keeping the \(\frac{N}{A}\) ration fixed}.
+		of users increases. As an example, in \figref{fig:continuity} we
+		can see that the total broadcast time needed to reach the 95th
+		percentile of the users, the number of collisions and the total
+		number of messages sent increase with the number of users in the
+		network\footnote{File
+		\code{analysis/ContinuityTest/continuity-test.ipynb} contains
+		the Python script used to generate these images.}. We note that
+		the test has been performed by varying the total number of user
+		but keeping the user density fixed \idest{by keeping the
+		\(\frac{N}{A}\) ratio fixed}.
 \end{description}
 
-\begin{figure}[htb]
+\savegeometry{normal}
+\clearpage
+\newgeometry{margin=1pt}
+\begin{figure}[p]
 	\centering
-	\verb|\includegraphics[width=\textwidth]{img/continuity}|
-	\caption{Continuity test for the total broadcast time and the total
-	number of collisions when the number of users in the network
-	increases}\label{fig:continuity}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/continuity-broadcasttime}
+		\caption{Broadcast time to reach the\\95th percentile of the
+		users}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/continuity-collisions}
+		\caption{Total number of collisions}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.35\textheight}
+		\centering
+		\includegraphics[width=\textwidth]{img/continuity-msgssent}
+		\caption{Total number of messages sent}
+	\end{subfigure}
+	\caption{Continuity test (\(90\%\) confidence
+	intervals)}\label{fig:continuity}
 \end{figure}
+\clearpage
+\loadgeometry{normal}

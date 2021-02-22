@@ -1,0 +1,2820 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<snapshot
+    object="simulation"
+    label="doc-example-ev1175"
+    simtime="13.5"
+    network="Floorplan"
+    >
+<object class="omnetpp::cSimulation" fullpath="simulation">
+  <info></info>
+  <object class="omnetpp::cModule" fullpath="Floorplan">
+    <info>id=1</info>
+    <object class="omnetpp::cPar" fullpath="Floorplan.userCount">
+      <info>60</info>
+    </object>
+
+    <object class="omnetpp::cPar" fullpath="Floorplan.sizeX">
+      <info>100m</info>
+    </object>
+
+    <object class="omnetpp::cPar" fullpath="Floorplan.sizeY">
+      <info>100m</info>
+    </object>
+
+    <object class="omnetpp::cPar" fullpath="Floorplan.indexStartingNode">
+      <info>47</info>
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[0]">
+      <info>id=2</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[0].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].posX">
+        <info>49.7664m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].posY">
+        <info>62.2109m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[0].relayDelay">
+        <info>1</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[1]">
+      <info>id=3</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[1].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].posX">
+        <info>43.7728m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].posY">
+        <info>61.2112m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[1].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[1].">
+        <info>selfmsg for Floorplan.user[1] (id=3) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[2]">
+      <info>id=4</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[2].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].posX">
+        <info>77.136m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].posY">
+        <info>77.9976m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[2].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[2].">
+        <info>src=Floorplan.user[32] (id=34)  dest=Floorplan.user[2] (id=4) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[3]">
+      <info>id=5</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[3].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].posX">
+        <info>27.2593m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].posY">
+        <info>15.0637m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[3].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[3].">
+        <info>src=Floorplan.user[30] (id=32)  dest=Floorplan.user[3] (id=5) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[4]">
+      <info>id=6</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[4].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].posX">
+        <info>19.8519m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].posY">
+        <info>80.1872m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[4].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[4].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[4] (id=6) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[5]">
+      <info>id=7</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[5].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].posX">
+        <info>95.8139m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].posY">
+        <info>15.8815m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[5].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[5].">
+        <info>src=Floorplan.user[18] (id=20)  dest=Floorplan.user[5] (id=7) </info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[5].">
+        <info>src=Floorplan.user[21] (id=23)  dest=Floorplan.user[5] (id=7) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[6]">
+      <info>id=8</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[6].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].posX">
+        <info>11.6138m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].posY">
+        <info>35.7817m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[6].relayDelay">
+        <info>0</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[7]">
+      <info>id=9</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[7].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].posX">
+        <info>50.0995m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].posY">
+        <info>48.6833m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[7].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[7].">
+        <info>selfmsg for Floorplan.user[7] (id=9) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[8]">
+      <info>id=10</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[8].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].posX">
+        <info>33.1015m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].posY">
+        <info>71.2702m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[8].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[8].">
+        <info>src=Floorplan.user[7] (id=9)  dest=Floorplan.user[8] (id=10) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[9]">
+      <info>id=11</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[9].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].posX">
+        <info>37.0251m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].posY">
+        <info>9.82519m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[9].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[9].">
+        <info>src=Floorplan.user[55] (id=57)  dest=Floorplan.user[9] (id=11) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[10]">
+      <info>id=12</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[10].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].posX">
+        <info>5.59934m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].posY">
+        <info>50.3083m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[10].relayDelay">
+        <info>3</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[11]">
+      <info>id=13</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[11].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].posX">
+        <info>1.37685m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].posY">
+        <info>2.21439m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[11].relayDelay">
+        <info>2</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[12]">
+      <info>id=14</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[12].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].posX">
+        <info>29.0729m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].posY">
+        <info>88.2641m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[12].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[12].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[12] (id=14) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[13]">
+      <info>id=15</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[13].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].posX">
+        <info>36.4886m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].posY">
+        <info>73.8287m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[13].relayDelay">
+        <info>0</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[14]">
+      <info>id=16</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[14].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].posX">
+        <info>88.9226m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].posY">
+        <info>7.53812m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[14].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[14].">
+        <info>selfmsg for Floorplan.user[14] (id=16) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[15]">
+      <info>id=17</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[15].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].posX">
+        <info>36.8824m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].posY">
+        <info>11.7443m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[15].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[15].">
+        <info>src=Floorplan.user[55] (id=57)  dest=Floorplan.user[15] (id=17) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[16]">
+      <info>id=18</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[16].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].posX">
+        <info>39.3782m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].posY">
+        <info>65.1378m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[16].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[16].">
+        <info>src=Floorplan.user[20] (id=22)  dest=Floorplan.user[16] (id=18) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[17]">
+      <info>id=19</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[17].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].posX">
+        <info>39.7203m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].posY">
+        <info>53.8148m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[17].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[17].">
+        <info>selfmsg for Floorplan.user[17] (id=19) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[18]">
+      <info>id=20</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[18].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].posX">
+        <info>79.0622m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].posY">
+        <info>31.6836m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[18].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[18].">
+        <info>selfmsg for Floorplan.user[18] (id=20) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[19]">
+      <info>id=21</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[19].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].posX">
+        <info>56.8099m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].posY">
+        <info>43.5332m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[19].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[19].">
+        <info>selfmsg for Floorplan.user[19] (id=21) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[20]">
+      <info>id=22</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[20].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].posX">
+        <info>56.9479m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].posY">
+        <info>43.6173m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[20].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[20].">
+        <info>selfmsg for Floorplan.user[20] (id=22) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[21]">
+      <info>id=23</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[21].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].posX">
+        <info>80.2148m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].posY">
+        <info>4.05562m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[21].relayDelay">
+        <info>1</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[22]">
+      <info>id=24</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[22].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].posX">
+        <info>54.812m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].posY">
+        <info>70.4261m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[22].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[22].">
+        <info>selfmsg for Floorplan.user[22] (id=24) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[23]">
+      <info>id=25</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[23].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].posX">
+        <info>70.4581m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].posY">
+        <info>37.6472m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[23].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[23].">
+        <info>selfmsg for Floorplan.user[23] (id=25) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[24]">
+      <info>id=26</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[24].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].posX">
+        <info>32.7912m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].posY">
+        <info>92.4868m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[24].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[24].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[24] (id=26) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[25]">
+      <info>id=27</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[25].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].posX">
+        <info>44.2141m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].posY">
+        <info>64.6552m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[25].relayDelay">
+        <info>1</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[26]">
+      <info>id=28</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[26].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].posX">
+        <info>4.74265m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].posY">
+        <info>5.98092m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[26].relayDelay">
+        <info>0</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[27]">
+      <info>id=29</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[27].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].posX">
+        <info>18.4287m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].posY">
+        <info>68.9236m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[27].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[27].">
+        <info>src=Floorplan.user[17] (id=19)  dest=Floorplan.user[27] (id=29) </info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[27].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[27] (id=29) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[28]">
+      <info>id=30</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[28].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].posX">
+        <info>92.9546m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].posY">
+        <info>67.4881m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[28].relayDelay">
+        <info>0</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[29]">
+      <info>id=31</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[29].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].posX">
+        <info>59.4625m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].posY">
+        <info>97.5302m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[29].relayDelay">
+        <info>2</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[30]">
+      <info>id=32</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[30].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].posX">
+        <info>39.7002m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].posY">
+        <info>4.33241m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[30].relayDelay">
+        <info>1</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[31]">
+      <info>id=33</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[31].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].posX">
+        <info>56.1433m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].posY">
+        <info>43.0151m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[31].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[31].">
+        <info>selfmsg for Floorplan.user[31] (id=33) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[32]">
+      <info>id=34</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[32].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].posX">
+        <info>76.4531m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].posY">
+        <info>50.2967m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[32].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[32].">
+        <info>selfmsg for Floorplan.user[32] (id=34) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[33]">
+      <info>id=35</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[33].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].posX">
+        <info>11.1894m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].posY">
+        <info>8.0947m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[33].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[33].">
+        <info>src=Floorplan.user[30] (id=32)  dest=Floorplan.user[33] (id=35) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[34]">
+      <info>id=36</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[34].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].posX">
+        <info>70.4544m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].posY">
+        <info>56.5945m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[34].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[34].">
+        <info>selfmsg for Floorplan.user[34] (id=36) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[35]">
+      <info>id=37</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[35].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].posX">
+        <info>0.676407m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].posY">
+        <info>3.23493m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[35].relayDelay">
+        <info>0</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[36]">
+      <info>id=38</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[36].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].posX">
+        <info>32.815m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].posY">
+        <info>91.2123m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[36].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[36].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[36] (id=38) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[37]">
+      <info>id=39</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[37].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].posX">
+        <info>79.0524m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].posY">
+        <info>6.80847m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[37].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[37].">
+        <info>selfmsg for Floorplan.user[37] (id=39) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[38]">
+      <info>id=40</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[38].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].posX">
+        <info>38.2711m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].posY">
+        <info>95.8802m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[38].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[38].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[38] (id=40) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[39]">
+      <info>id=41</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[39].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].posX">
+        <info>79.1964m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].posY">
+        <info>89.6329m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[39].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[39].">
+        <info>src=Floorplan.user[28] (id=30)  dest=Floorplan.user[39] (id=41) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[40]">
+      <info>id=42</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[40].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].posX">
+        <info>76.4309m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].posY">
+        <info>62.4917m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[40].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[40].">
+        <info>src=Floorplan.user[20] (id=22)  dest=Floorplan.user[40] (id=42) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[41]">
+      <info>id=43</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[41].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].posX">
+        <info>47.8094m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].posY">
+        <info>2.58142m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[41].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[41].">
+        <info>src=Floorplan.user[55] (id=57)  dest=Floorplan.user[41] (id=43) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[42]">
+      <info>id=44</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[42].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].posX">
+        <info>90.6531m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].posY">
+        <info>38.2317m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[42].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[42].">
+        <info>src=Floorplan.user[18] (id=20)  dest=Floorplan.user[42] (id=44) </info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[42].">
+        <info>src=Floorplan.user[28] (id=30)  dest=Floorplan.user[42] (id=44) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[43]">
+      <info>id=45</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[43].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].posX">
+        <info>5.38737m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].posY">
+        <info>61.9315m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[43].relayDelay">
+        <info>1</info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[44]">
+      <info>id=46</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[44].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].posX">
+        <info>21.1589m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].posY">
+        <info>98.2005m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[44].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[44].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[44] (id=46) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[45]">
+      <info>id=47</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[45].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].posX">
+        <info>12.3943m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].posY">
+        <info>66.1545m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[45].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[45].">
+        <info>src=Floorplan.user[17] (id=19)  dest=Floorplan.user[45] (id=47) </info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[45].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[45] (id=47) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[46]">
+      <info>id=48</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[46].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].posX">
+        <info>88.6261m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].posY">
+        <info>73.8523m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[46].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[46].">
+        <info>src=Floorplan.user[32] (id=34)  dest=Floorplan.user[46] (id=48) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[47]">
+      <info>id=49</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[47].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].posX">
+        <info>58.7304m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].posY">
+        <info>32.9681m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[47].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[47].">
+        <info>selfmsg for Floorplan.user[47] (id=49) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[48]">
+      <info>id=50</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[48].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].posX">
+        <info>20.7362m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].posY">
+        <info>10.7127m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[48].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[48].">
+        <info>src=Floorplan.user[30] (id=32)  dest=Floorplan.user[48] (id=50) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[49]">
+      <info>id=51</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[49].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].posX">
+        <info>22.9219m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].posY">
+        <info>7.15434m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[49].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[49].">
+        <info>src=Floorplan.user[30] (id=32)  dest=Floorplan.user[49] (id=51) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[50]">
+      <info>id=52</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[50].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].posX">
+        <info>73.0056m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].posY">
+        <info>41.6754m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[50].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[50].">
+        <info>selfmsg for Floorplan.user[50] (id=52) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[51]">
+      <info>id=53</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[51].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].posX">
+        <info>53.5852m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].posY">
+        <info>69.0016m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[51].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[51].">
+        <info>selfmsg for Floorplan.user[51] (id=53) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[52]">
+      <info>id=54</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[52].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].posX">
+        <info>99.0575m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].posY">
+        <info>30.0642m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[52].relayDelay">
+        <info>1</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[52].">
+        <info>src=Floorplan.user[23] (id=25)  dest=Floorplan.user[52] (id=54) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[53]">
+      <info>id=55</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[53].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].posX">
+        <info>43.6893m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].posY">
+        <info>94.8123m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[53].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[53].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[53] (id=55) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[54]">
+      <info>id=56</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[54].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].posX">
+        <info>58.3645m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].posY">
+        <info>91.8198m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[54].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[54].">
+        <info>src=Floorplan.user[13] (id=15)  dest=Floorplan.user[54] (id=56) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[55]">
+      <info>id=57</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[55].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].posX">
+        <info>62.5737m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].posY">
+        <info>16.8657m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[55].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[55].">
+        <info>selfmsg for Floorplan.user[55] (id=57) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[56]">
+      <info>id=58</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[56].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].posX">
+        <info>15.8808m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].posY">
+        <info>14.9834m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[56].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[56].">
+        <info>src=Floorplan.user[30] (id=32)  dest=Floorplan.user[56] (id=58) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[57]">
+      <info>id=59</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[57].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].posX">
+        <info>74.6063m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].posY">
+        <info>71.8265m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[57].relayDelay">
+        <info>2</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[57].">
+        <info>src=Floorplan.user[32] (id=34)  dest=Floorplan.user[57] (id=59) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[58]">
+      <info>id=60</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[58].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].posX">
+        <info>47.6543m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].posY">
+        <info>63.3726m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[58].relayDelay">
+        <info>0</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[58].">
+        <info>selfmsg for Floorplan.user[58] (id=60) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::User" fullpath="Floorplan.user[59]">
+      <info>id=61</info>
+      <object class="omnetpp::cGate" fullpath="Floorplan.user[59].in">
+        <info>not connected</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].posX">
+        <info>43.831m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].posY">
+        <info>40.4202m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].sendOnStart">
+        <info>false</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].broadcastRadius">
+        <info>30m</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].hearWindow">
+        <info>5</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].maxCopies">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.user[59].relayDelay">
+        <info>3</info>
+      </object>
+
+      <object class="omnetpp::cMessage" fullpath="Floorplan.user[59].">
+        <info>selfmsg for Floorplan.user[59] (id=61) </info>
+      </object>
+
+    </object>
+
+    <object class="pecsn::Oracle" fullpath="Floorplan.oracle">
+      <info>id=62</info>
+      <object class="omnetpp::cPar" fullpath="Floorplan.oracle.slotDuration">
+        <info>1s</info>
+      </object>
+
+      <object class="omnetpp::cPar" fullpath="Floorplan.oracle.timeout">
+        <info>9</info>
+      </object>
+
+    </object>
+
+  </object>
+
+  <object class="omnetpp::cEventHeap" fullpath="simulation.scheduled-events">
+    <info>length=42</info>
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[0] (id=2) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[2] (id=4) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[3] (id=5) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[4] (id=6) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[5] (id=7) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[6] (id=8) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[8] (id=10) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[9] (id=11) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[10] (id=12) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[11] (id=13) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[12] (id=14) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[13] (id=15) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[15] (id=17) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[16] (id=18) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[21] (id=23) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[24] (id=26) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[25] (id=27) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[26] (id=28) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[27] (id=29) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[28] (id=30) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[29] (id=31) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[30] (id=32) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[33] (id=35) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[35] (id=37) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[36] (id=38) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[38] (id=40) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[39] (id=41) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[40] (id=42) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[41] (id=43) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[42] (id=44) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[43] (id=45) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[44] (id=46) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[45] (id=47) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[46] (id=48) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[48] (id=50) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[49] (id=51) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[52] (id=54) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[53] (id=55) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[54] (id=56) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[56] (id=58) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.user[57] (id=59) </info>
+    </object>
+
+    <object class="omnetpp::cMessage" fullpath="simulation.scheduled-events.">
+      <info>at t=14, in dt=500ms; selfmsg for Floorplan.oracle (id=62) </info>
+    </object>
+
+  </object>
+
+</object>
+
+</snapshot>

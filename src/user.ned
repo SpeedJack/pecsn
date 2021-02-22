@@ -12,7 +12,7 @@ simple User
 		double broadcastRadius @unit(m) = default(20m);
 		int hearWindow = default(5);
 		int maxCopies = default(3);
-		volatile int relayDelay = default(intuniform(0, 3));
+		int relayDelay = default(intuniform(0, 3));
 
 		@signal[collisionsSig](type="unsigned long");
 		@signal[totalCollisionsSig](type="unsigned long");
