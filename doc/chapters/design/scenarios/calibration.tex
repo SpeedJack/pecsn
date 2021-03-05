@@ -1,0 +1,25 @@
+\subsection{Factors calibration}\label{subsec:calibration}
+
+We do not want to have too low values for the \(T\) parameter, since they would
+not allow the \emph{trickle relaying} algorithm to work properly. We will vary
+\(T\) from \(10s\) to \(20s\).
+
+For \(\max(\delta)\) we will avoid values greater than \(T\): this parameter
+is used to ``de-synchronize'' the time at which the message is sent by different
+nodes so it makes no sense to have this delay greater than the hear window. We
+will make it vary from \(5s\) to \(10s\).
+
+Regarding the parameter \(m\), we will find out appropriate values for each
+scenario by inspecting the \textit{copies} collected statistic. Generally, we
+expect that values in the range 3--7 are ok.
+
+The broadcast radius \(R\) must be adapted for every scenario, since the user
+density is different:
+\begin{enumerate}
+	\item For the ``high density scenario'' we will vary \(R\) from \(10m\)
+		to \(20m\).
+	\item For the ``low density scenario'' we will vary \(R\) from \(30m\)
+		to \(50m\).
+	\item For the ``rectangular scenario'' we will vary \(R\) from \(20m\)
+		to \(40m\).
+\end{enumerate}
