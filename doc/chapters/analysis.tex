@@ -1,5 +1,41 @@
 \chapter{Data analysis}\label{ch:analysis}
 
+To perform the analysis of the three scenarios we have prepared a shell
+script\footnote{\code{simulations/simulate.sh}.} that executes parallel runs
+with the configuration specified by a command line parameter and exports the
+results inside a specified folder in the \code{analysis/} directory in CSV
+format.
+
+The \code{analysis/} directory contains various Jupyter notebook used to analyze
+the data. Those notebooks have been developed with automation in mind: we just
+need to configure it in the ``Config'' section at the start of the notebook and
+run it. Python will then output a complete analysis on the provided data. This
+means that, often, not all the plots/tables created by these scripts are really
+useful for the analysis (they are plotted, but this does not mean they are
+meaningful in every situation). Moreover, when we need to run the same Jupyter
+notebook with different configuration parameters \exgratia{to apply or not a
+transformation on the predicted variable in the 2\textsuperscript{k}r assumption
+verification} we will just copy and paste the notebook and change the needed
+configuration parameters.
+
+The \code{analysis/} folder contains ``generic'' Jupyter notebooks that we will
+copy inside some other folder before run it for a specific scenario. So, for
+example, analysis for the ``High density scenario'' can be found inside the
+\code{analysis/HighDensity} folder.
+
+For each Jupyter notebook execution we have also saved the output in HTML
+format. So, as an example, for the ``High density scenario'', inside the
+\code{analysis/HighDensity/exported\_html/} you can found the output of each
+Jupyter notebook of the \code{analysis/HighDensity/} directory. This may be
+useful to inspect the results of our analysis even if Jupyter is not installed.
+
+In the following we will discuss the most important considerations on the
+results provided by Python. In any case, we will ofter refer to the Jupyter
+notebook file which contains the full analysis. So, for example, if in the
+``High density scenario'' we mention the \code{2kr.ipynb} file, head to the
+\code{analysis/HighDensity/2kr.ipynb} file to read the full analysis (or the
+equivalent HTML exported version inside the \code{exported\_html/} sub-folder).
+
 \input{scenarios/high-density}
 \input{scenarios/low-density}
 \input{scenarios/rectangular}
