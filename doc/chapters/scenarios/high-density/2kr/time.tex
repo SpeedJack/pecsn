@@ -1,0 +1,28 @@
+\subsubsection{Broadcast time}\label{subsubsec:hd2krtime}
+
+Since in all the experiments we have always reached a coverage of at least
+\(99\%\), here we will only discuss the broadcast time needed to reach the 99th
+percentile of the coverage.
+
+We have a large unexplained variation (\(8.03\%\)). The reason for this result
+will be discussed in \chref{ch:starting-node}.
+
+We can see that the most important factor is the broadcast radius that accounts
+for the \(67.88\%\) of the variation, followed by the size of the hear window
+(\(22.82\%\)). Other factors and their combinations are irrelevant. We note that
+these variations are much larger than the unexplained variation, so we can still
+say that they are significant. Of course, their \(95\%\) confidence intervals
+also gets larger: (\(60.41\%\), \(75.79\%\)) for \(R\) and (\(18.58\%\),
+\(27.5\%\)) for \(T\), but they do not include the zero.
+
+This means that we can reduce the broadcast time by increasing the broadcast
+radius to let the relayed messages to reach more user. Also the size of the hear
+window can be decreased in order to reduce the time that each user wait before
+deciding to relay or not relay the message. Of course, as stated before,
+reducing the size of the hear window has a negative impact on the energy
+efficiency, so some trade-off considerations are required.
+
+We note that we have performed a \emph{logarithmic transformation of the
+predicted variable} \idest{the total broadcast time} in order to meet the
+assumption of finite variance for the residuals, as discussed in
+\secref{subsec:hdassumptions}. This means that \ldots TODO \ldots.

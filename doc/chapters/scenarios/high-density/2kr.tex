@@ -1,1 +1,30 @@
 \subsection{2\texorpdfstring{\textsuperscript{k}}{k}r analysis}\label{subsec:hd2kr}
+
+Analysis performed with \(k\!=\!4\) and \(r\!=\!10\), for a total of \(2^4 \cdot
+10 \!=\!160\) experiments. The performance indexes evaluated are the one defined
+in \secref{sec:indexes}. When we talk about the total number of messages sent
+remember that we are analyzing the \emph{energy efficiency} (\(\mathit{Eff}\))
+of the network.
+
+The simulation configuration for this analysis, named ``HighDensity2kr'' can be
+found in the \code{simulations.ini} file. The simulations have been run using
+our \code{simulate.sh} script with the following command:
+\begin{verbatim}
+$ ./simulate.sh -s HighDensity -c HighDensity2kr
+\end{verbatim}
+
+First, we have verified that the range of values for the \code{maxCopies}
+parameter (3--7) was fine. The analysis can be found in \code{histograms.ipynb}.
+Here, we just check that with \(m\!=\!3\) and \(m\!=\!7\) we get that a lot of
+users decide to not relay the message in the first case and only a small bunch
+of users decide to not relay the message in the second case.
+
+Then, the 2\textsuperscript{k}r analysis can be found in \code{2kr.ipynb}. We
+will verify the assumptions of normality, independence and finite variance for
+the residuals in \secref{subsec:hdassumptions}. Here we will discuss the
+results.
+
+\input{scenarios/high-density/2kr/coverage}
+\input{scenarios/high-density/2kr/collisions}
+\input{scenarios/high-density/2kr/messages}
+\input{scenarios/high-density/2kr/time}
