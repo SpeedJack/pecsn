@@ -1,4 +1,31 @@
 \subsection{Optimization for the high density
 scenario}\label{subsec:hdoptimization}
 
-\ldots
+As we have seen, there is not much to do to optimize the percentage of covered
+users, since it is always nearly perfect. But, of course, there are very low
+values of the parameters that does not allow the network to reach the maximum
+coverage. We have run a full factorial analysis, with low values of each
+parameter, in order to identify the minimum values required to reach the
+coverage. Each possible configuration (\(750\)) has been run with 10
+repetitions. Figure X shows the \ldots. The complete analysis can be found in
+\code{coverage.ipynb}. The configuration used is named
+``HighDensityCoverage''.
+
+TODO
+
+If we want to optimize the total broadcast time, as we have seen in
+\secref{subsec:hd2kr}, we need to increase the broadcast radius or decrease the
+size of the hear window. File \code{broadcast-time.ipynb} shows the results with
+various combination of these two factors. The configuration used is named
+``HighDensityTime''. Figure Y shows the \ldots.
+
+TODO
+
+If instead we want to optimize the energy efficiency, we must reduce the
+broadcast radius and the total number of messages sent. In file
+\code{messages.ipynb} we have performed a factorial analysis with low values for
+the broadcast radius. Factors taken into considerations are the one we have
+identified as relevant in \secref{subsec:hd2kr}, namely the maximum number of
+copies and the size of the hear window.
+
+TODO

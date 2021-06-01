@@ -25,4 +25,34 @@ efficiency, so some trade-off considerations are required.
 We note that we have performed a \emph{logarithmic transformation of the
 predicted variable} \idest{the total broadcast time} in order to meet the
 assumption of finite variance for the residuals, as discussed in
-\secref{subsec:hdassumptions}. This means that \ldots TODO \ldots.
+\secref{subsec:hdassumptions}. This means that the final approximated regression
+model for the broadcast time is transformed into the one shown
+in~\eqref{eq:hdtimelogregressionmodel}, with \(R\) and \(T\) normalized between
+\(-1\) and \(1\). (factors with low influence are removed; 95\% confidence
+intervals are show in parenthesis).
+
+\begin{equation}\label{eq:hdtimelogregressionmodel}
+	\begin{cases}
+		\log(t_B) = q_0 + q_R \cdot R + q_T \cdot T + e\\
+		q_0 = 4.76328\\
+		q_R = -0.451098 & (-0.47665, -0.425547)\\
+		q_T = 0.261562 & (0.236011, 0.287113)
+	\end{cases}
+\end{equation}
+
+We can then predict the total broadcast time using the formula shown
+in~\eqref{eq:hdtimeregressionmodel}.
+
+\begin{equation}\label{eq:hdtimeregressionmodel}
+	t_B = e^{4.76328 - 0.451098 \cdot R + 0.261562 \cdot T}
+\end{equation}
+
+And the 95\% confidence interval as shown in~\eqref{eq:hdtimeregressionci}.
+(TODO\@: not sure it is right).
+
+\begin{equation}\label{eq:hdtimeregressionci}
+	\begin{cases}
+		t^-_B = e^{4.76328 - 0.47665 \cdot R + 0.236011 \cdot T}\\
+		t^+_B = e^{4.76328 - 0.425547 \cdot R + 0.287113 \cdot T}\\
+	\end{cases}
+\end{equation}
