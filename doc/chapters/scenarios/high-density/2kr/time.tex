@@ -4,16 +4,16 @@ Since in all the experiments we have always reached a coverage of at least
 \(99\%\), here we will only discuss the broadcast time needed to reach the 99th
 percentile of the coverage.
 
-We have a large unexplained variation (\(8.03\%\)). The reason for this result
+We have a large unexplained variation (\(7.95\%\)). The reason for this result
 will be discussed in \chref{ch:starting-node}.
 
 We can see that the most important factor is the broadcast radius that accounts
-for the \(67.88\%\) of the variation, followed by the size of the hear window
-(\(22.82\%\)). Other factors and their combinations are irrelevant. We note that
+for the \(71.25\%\) of the variation, followed by the size of the hear window
+(\(19.30\%\)). Other factors and their combinations are irrelevant. We note that
 these variations are much larger than the unexplained variation, so we can still
 say that they are significant. Of course, their \(95\%\) confidence intervals
-also gets larger: (\(60.41\%\), \(75.79\%\)) for \(R\) and (\(18.58\%\),
-\(27.5\%\)) for \(T\), but they do not include the zero.
+also gets larger: (\(63.62\%\), \(79.30\%\)) for \(R\) and (\(15.43\%\),
+\(23.59\%\)) for \(T\), but they do not include the zero.
 
 This means that we can reduce the broadcast time by increasing the broadcast
 radius to let the relayed messages to reach more user. Also the size of the hear
@@ -34,9 +34,9 @@ intervals are show in parenthesis).
 \begin{equation}\label{eq:hdtimelogregressionmodel}
 	\begin{cases}
 		\log(t_B) = q_0 + q_R \cdot R + q_T \cdot T + e\\
-		q_0 = 4.76328\\
-		q_R = -0.451098 & (-0.47665, -0.425547)\\
-		q_T = 0.261562 & (0.236011, 0.287113)
+		q_0 = 4.782874\\
+		q_R = -0.462452 & (-0.487897, -0.437006)\\
+		q_T = 0.240663 & (0.215217, 0.266109)
 	\end{cases}
 \end{equation}
 
@@ -44,7 +44,7 @@ We can then predict the total broadcast time using the formula shown
 in~\eqref{eq:hdtimeregressionmodel}.
 
 \begin{equation}\label{eq:hdtimeregressionmodel}
-	t_B = e^{4.76328 - 0.451098 \cdot R + 0.261562 \cdot T}
+	t_B = e^{4.782874 - 0.462452 \cdot R + 0.240663 \cdot T}
 \end{equation}
 
 And the 95\% confidence interval as shown in~\eqref{eq:hdtimeregressionci}.
@@ -52,7 +52,7 @@ And the 95\% confidence interval as shown in~\eqref{eq:hdtimeregressionci}.
 
 \begin{equation}\label{eq:hdtimeregressionci}
 	\begin{cases}
-		t^-_B = e^{4.76328 - 0.47665 \cdot R + 0.236011 \cdot T}\\
-		t^+_B = e^{4.76328 - 0.425547 \cdot R + 0.287113 \cdot T}\\
+		t^-_B = e^{4.782874 - 0.487897 \cdot R + 0.215217 \cdot T}\\
+		t^+_B = e^{4.782874 - 0.437006 \cdot R + 0.266109 \cdot T}\\
 	\end{cases}
 \end{equation}

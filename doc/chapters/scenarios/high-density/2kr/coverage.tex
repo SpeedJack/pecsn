@@ -1,17 +1,17 @@
 \subsubsection{Percentage of covered users}\label{subsubsec:hd2krcoverage}
 
 As we can see from the table (see the Jupyter notebook), the lowest value for
-the percentage of covered users is \(0.997331\!=\!99.7331\%\) found in four
-experiments, meaning that there are four experiments where 1121 users out of
-1124 (not counting the first one) have been reached (only 3 nodes have not heard
+the percentage of covered users is \(0.992883\!=\!99.2883\%\) found in two
+experiments, meaning that there are two experiments where 1116 users out of
+1124 (not counting the first one) have been reached (only 8 nodes have not heard
 the message), while every other experiments gave higher results for the
 coverage. The lowest mean of every repetitions is even higher:
-\(0.9992\!=\!99.92\%\). The coverage reaches its maximum value (\(100\%\)) in
-\(\frac{127}{160}\!=\!79.375\%\) of all the experiments.
+\(0.997954\!=\!99.7954\%\). The coverage reaches its maximum value (\(100\%\))
+in \(\frac{125}{160}\!=\!78.125\%\) of all the experiments.
 
 Given these results, we can say that there is no need to analyze the percentage
 of covered users in this scenario since it is almost always perfect (or nearly
-perfect) and there is nothing to optimize. In any case, from the performance
-plots at the end of the notebook, we can clearly see that, generally, in order
-to have an higher chance of hitting the maximum coverage, the best we can do is
-to increase the broadcast radius (\(R\)).
+perfect) and there is nothing to optimize. In any case, from common sense we can
+derive that the most important factor to increase the coverage should be the
+broadcast radius: higher radius allows each user to reach more users of the
+network.
