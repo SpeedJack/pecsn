@@ -60,8 +60,8 @@ mean value obtained from the full factorial analysis (\(117.2s\)) and inside its
 	e^{4.8385562} \simeq 126.2869s
 \end{equation}
 
-If instead we want to optimize the energy efficiency, we must reduce the
-broadcast radius and the total number of messages sent. In file
+If instead we want to optimize the \standout{energy efficiency}, we must reduce
+the broadcast radius and the total number of messages sent. In file
 \code{messages.ipynb} we have performed a factorial analysis with low values for
 the broadcast radius. Other factors taken into considerations are the one we
 have identified as relevant in \secref{subsec:hd2kr}, namely the maximum number
@@ -91,4 +91,53 @@ value of \(R\) to reduce the broadcast radius and increase \(T\) maintaining a
 low \(m\) in order to compensate for the increment of the energy consumption due
 to the higher value of \(R\).
 
-TODO\@: collisions
+Regarding the \standout{total number of collisions}, we can reduce it by
+reducing the broadcast radius and the maximum number of copies. Also helps
+increasing the maximum relay delay. If the energy efficiency is the main
+performance index that we want to optimize, the best way to reduce the total
+number of collisions is certainly to reduce the broadcast radius. If instead we
+want to optimize the broadcast time, we can reduce the total number of
+collisions by reducing \(m\) and increasing \(\max(\delta)\). Factorial
+analysis with the \(m\) and \(\max(\delta)\) parameters is available in
+\code{collisions.ipynb}, using the configuration named
+``HighDensityCollisions''. \figref{fig:hdcollisionsff} shows the results: the
+plot is very well linear in the \(\max(\delta)\) parameter, suggesting that
+increasing this factor even more should allow to have even a lower number of
+collisions. \(m\!=\!2\) is a good setup for this parameter since it allows to
+completely exploit the advantages of the \emph{trickle relaying} algorithm in
+order to reduce the number of collisions and the number of messages sent.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{img/hd/collisions-D-ffplot}
+	\caption{The number of collisions is linearly dependent on the maximum
+	relay delay. Also, trickle relaying can be exploited with low values of
+	\(m\) in order to reduce the number of
+	collisions}\label{fig:hdcollisionsff}
+\end{figure}
+
+\subsubsection{Conclusions}\label{subsubsec:hdconclusions}
+
+\begin{itemize}
+	\item The minimal configuration to get a nearly perfect coverage is with
+		\(R\!=\!8m\), \(T\!=\!2s\), \(m\!=\!2\) and
+		\(\max(\delta)\!=\!2s\). Higher values for these parameters does
+		not break the coverage. For a more ``safe'' setup, \(R\) may be
+		increased to \(9m\) or \(10m\).
+	\item If a low total broadcast time is a main objective, increasing
+		\(R\) is effective. Also reducing \(T\) allows for further
+		improvement of the broadcast time.
+	\item If instead a better energy efficiency is the main objective, \(R\)
+		can not be increased and \(T\) should not be reduced. A
+		trade-off decision between a low broadcast time and a good
+		energy efficiency is needed.
+	\item There is no reason to use large values for the maximum number of
+		copies: \(m\!=\!2\) is a good set for this parameter and it
+		leads to a lower number of collisions and a better energy
+		efficiency without sacrificing the broadcast time. Trickle
+		relaying is very effective in this job.
+	\item \(\max(\delta)\) should be sufficiently high, in order to reduce
+		the total number of collisions, but not too high, in order to
+		avoid an increase in the broadcast time due to users waiting too
+		much before relaying the message.
+\end{itemize}
