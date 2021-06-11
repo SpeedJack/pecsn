@@ -1,114 +1,89 @@
-\subsection{Optimization for the rectangular scenario (with low density)}\label{subsec:rectoptimization}
+\subsection{Optimization for the rectangular
+scenario}\label{subsec:rectoptimization}
 
-The situation is the same of the high density scenario. We have run a full
-factorial analysis, with low values of each parameter, in order to identify the
-minimum values required to reach the coverage. Each possible configuration
-(\(750\)) has been run with 10 repetitions. The complete analysis can be found
-in \code{coverage.ipynb}. The configuration used is named
-``LowDensityCoverage''. We have found out that to reach at least the \(99\%\) of
-the coverage, we need to have a broadcast radius of at least \(23m\), but we
-also need higher values for \(m\) and \(D\). If we use \(R\!=\!25m\) we get
-better results for the other parameters. In particular, we have found the
-following minimum configuration the we consider ``good'' and ``well balanced''
-since it does not use the value \code{1} for any of the parameters.
+As in other scenarios, we have run a full factorial analysis, with low values of
+each parameter, in order to identify the minimum values required to reach the
+coverage.The complete analysis can be found in \code{coverage.ipynb}. The
+configuration used is named ``RectangularCoverage''. We have found out that to
+reach at least the \(99\%\) of the coverage, we need to have a broadcast radius
+of at least \(7m\), the same of the high density scenario, but we also need
+higher values for \(m\) and \(D\). If we use \(R\!=\!8m\) we get better results
+for the other parameters. In particular, we have found the following minimum
+configuration the we consider ``good'' and ``well balanced'' since it does not
+use the value \code{1} for any of the parameters. So for the coverage the
+situation is the same for a square or a rectangle
 
 \begin{center}
 	\begin{tabular}{cccc}
 		\toprule
 		R & T & m & \(\max(\delta)\) \\
 		\midrule
-		\(25m\) & \(2s\) & \(2\,\mathit{copies}\) & \(2s\) \\
+		\(8m\) & \(2s\) & \(2\,\mathit{copies}\) & \(2s\) \\
 		\bottomrule
 	\end{tabular}
 \end{center}
 
-As in the high density scenario, to optimize the \standout{total broadcast time}
-we need to increase the broadcast radius or decrease the size of the hear
-window. The results are in the file code{broadcast-time.ipynb}. The
-configuration used is named ``LowDensityTime'', where we use, as suggested from
-the plots of \code{2kr.ipynb}, high values for \(m\) and low value for the
-maximum relay delay. As shown in \figref{fig:ldtimeff}, we see that with low
-values of T we reduce so much the broadcast time, as we can expect, so regarding
-also energy efficiency it is convenient only to reduce the hear window, without
-increase the radius (also increase a little bit R is not convenient because
-there isn't a great difference in the time)
+As in the other scenarios, to optimize the \standout{total broadcast time} we
+need to increase the broadcast radius (with higher energy consumption) or
+decrease the size of the hear window. The results are in the file
+code{broadcast-time.ipynb}. The configuration used is named ``RectangularTime'',
+where we use, as suggested from the plots of \code{2kr.ipynb}, high values for
+\(m\) and low value for the maximum relay delay. As shown in
+\figref{fig:recttimeff},also in this case a low T reduces so much the broadcast
+time.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{img/ld/broadcasttime-R-ffplot}
+	\includegraphics[width=\textwidth]{img/rect/broadcasttime-T-ffplot.png}
 	\caption{The broadcast time is lower with higher values of the broadcast
-	radius and lower values of the size of the hear
-	window (95\% confidence intervals)}\label{fig:recttimeff}
+	radius and lower values of the size of the hear window (95\% confidence
+	intervals)}\label{fig:recttimeff}
 \end{figure}
 
-To optimize the \standout{energy efficiency}, we have to study the number of
+To optimize the \standout{energy efficiency}, we have studied the number of
 messages, with a factorial analysis shown in file \code{messages.ipynb},
 considering to use low values for the broadcast radius (that obviously improved
-energy efficiency). Other factors taken into considerations are the one we have
-identified as relevant in \secref{subsec:rect2kr}, namely the maximum number of
-copies and the size of the hear window. The configuration used is named
-``LowDensityMessages''.
+energy efficiency). The configuration used is named ``RectangularMessages''.
 
-As we can see from \figref{fig:rectmessagesff}, we get that the maximum number of
-copies hugely affects the total number of messages sent, as previously found by
-the \(2^{k}r\) analysis. Also increase the size of the hear window have benefits
-(but little ones as predicted by the \(2^{k}r\))
+As we can see from \figref{fig:rectmessagesff}, we get that, as in the low
+density configuration, the maximum number of copies hugely affects the total
+number of messages sent, as previously found by the \(2^{k}r\) analysis. Also
+increase the size of the hear window have benefits
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{img/ld/messages-R-ffplot.png}
+	\includegraphics[width=\textwidth]{img/rect/messages-m-ffplot.png}
 	\caption{With low values of the maximum number of copies and higher
 	values for the size of the hear window, we get a lower number of
 	messages sent}\label{fig:rectmessagesff}
 \end{figure}
 
-So, in order to improve the energy efficiency, since we can not increase the
-broadcast radius, we need to use surely low \(m\) and also higher \(T\).
-Increasing \(T\) also increases the broadcast time, so a trade-off decision is
-needed in this parameter. Because manipulating the hear window we have only
-little benefits in the energy consumption, we can decide to use a low or medium
-value, which implies a little bit more of consumption but a large benefit in the
-broadcast time.
+So, we can improve energy efficiency with the same parameter manipulation of
+other scenarios, taking into consideration the trade-off between broadcast time
+and consumption, regarding the hear window
 
-Regarding the \standout{total number of collisions}, we can reduce it by
-reducing the broadcast radius and the maximum number of copies. Also helps
-increasing the maximum relay delay, equally from the high density scenario.
-Factorial analysis with the \(m\) and \(\max(\delta)\) parameters is available
-in \code{collisions.ipynb}, using the configuration named
-``LowDensityCollisions''. \figref{fig:rectcollisionsff} shows the results:
-increasing \(\max(\delta)\) should allow to have even a lower number of
-collisions. \(m\!=\!2\) is a good setup for this parameter since it allows to
-completely exploit the advantages of the \emph{trickle relaying} algorithm in
-order to reduce the number of collisions and the number of messages sent.
+For the \standout{total number of collisions}, we can reduce it by reducing the
+broadcast radius and the maximum number of copies. Also helps increasing the
+maximum relay delay, equally from other scenarios.  Factorial analysis with the
+\(m\) and \(\max(\delta)\) parameters is available in \code{collisions.ipynb},
+using the configuration named ``RectangularCollisions''.
+\figref{fig:rectcollisionsff} shows the results.  So, also in this case,
+\(m\!=\!2\) is a good setup because of trickle relaying algorithm.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{img/ld/collisions-D-ffplot}
-	\caption{The number of collisions is linearly dependent on the maximum
-	relay delay. Also, trickle relaying can be exploited with low values of
-	\(m\) in order to reduce the number of
-	collisions}\label{fig:rectcollisionsff}
+	\includegraphics[width=\textwidth]{img/rect/collisions-m-ffplot.png}
+	\caption{The number of collisions is inverse linearly dependent on the
+	maximum	relay delay}\label{fig:rectcollisionsff}
 \end{figure}
 
 \subsubsection{Conclusions}\label{subsubsec:rectconclusions}
 
 \begin{itemize}
 	\item The minimal configuration to get a nearly perfect coverage is with
-		\(R\!=\!25m\), \(T\!=\!2s\), \(m\!=\!2\) and
+		\(R\!=\!8m\), \(T\!=\!2s\), \(m\!=\!2\) and
 		\(\max(\delta)\!=\!2s\). Higher values for these parameters does
 		not break the coverage.
-	\item If a low total broadcast time is a main objective, increasing
-		\(R\) is effective, but is better to reduce \(T\).
-	\item If instead a better energy efficiency is the main objective, \(R\)
-		can not be increased and \(T\) should not be reduced. A
-		trade-off decision between a low broadcast time and a good
-		energy efficiency is needed. We have to consider that for this
-		configuration changing \(T\) has a greater influence for the
-		broadcast time then the one related to the number of messages
-	\item Also in this configuration \(m\!=\!2\) is perfect to have a lower
-		number of collisions and a better energy efficiency without
-		sacrificing the broadcast time, thanks to trickle relaying.
-	\item \(\max(\delta)\) should be high, in order to reduce the total
-		number of collisions, but not too much, in order to avoid an
-		increase in the broadcast time due to users waiting time.
+	\item For energy efficiency, broadcast time and collisions the final
+		considerations are the same of the other two scenarios
 \end{itemize}
