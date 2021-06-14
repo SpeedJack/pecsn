@@ -1,1 +1,28 @@
 \chapter{Conclusions}\label{ch:conclusions}
+
+Optimizing a network like this is not a trivial task. A trade-off decision is
+needed between the broadcast time and the energy efficiency in order to select
+proper values for the size of the hear window and the broadcast radius.
+
+The network is almost always able to reach a full coverage if the broadcast
+radius is not too low. Sometimes a catastrophic event may occur, where the
+network is able to reach little or no coverage due to the random distribution of
+the users. This problem can be reduced by increasing the broadcast radius but it
+can not be eliminated (unless, of course, a broadcast radius that allows the
+first user to reach instantly the entire floorplan is used).
+
+\emph{Trickle relaying} is very effective in reducing the number of collisions:
+using a low value for the maximum number of copies leads to a very low number of
+collisions.
+
+Generally, the shape of the floorplan is irrelevant: the only effect is an
+higher broadcast radius if the floorplan is a rectangle compared to the case
+where the floorplan is a square.
+
+The position of the first user that sends out the message is \emph{very}
+important. As per specifications, the starting user is ``random'', so it's
+placement in the center can not be assured. This leads to possibly higher
+broadcast time, higher variance in the results, higher probability of a
+catastrophe in the coverage. This issue can be address by increasing the
+broadcast radius but, if it is possible, it is better to avoid the borders and
+corners of the floorplan for the starting user.
