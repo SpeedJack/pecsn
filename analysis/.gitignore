@@ -2,6 +2,8 @@
 Test/
 # Ignore figures
 *.png
+# Ignore HTML notebooks
+*.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

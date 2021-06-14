@@ -107,24 +107,23 @@ computed, in the general case, with~\eqref{eq:nocatastropheprobability}. The
 equation has been derived by considering the inverse of the probability to found
 \idest{the probability to \emph{not} found any node in the area of reachability,
 which is the probability to found all the nodes in the area outside the area of
-reachability} which is, for a single user, the area of reachability
-(\(\alpha\cdot\pi\cdot R^2\)) divided by the area of the floorplan (\(X\cdot
-Y\)). This probability has been then extended to the case of \(N\) users by
-raising it to the number of users except the first one (\(N-1\)).
+reachability} which is, for a single user, the area outside of the area of
+reachability (\(X\cdot Y - \alpha\cdot\pi\cdot R^2\)) divided by the area of the
+floorplan (\(X\cdot Y\)). This probability has been then extended to the case of
+\(N\) users by raising it to the number of users except the first one (\(N-1\)).
 
 \begin{equation}\label{eq:nocatastropheprobability}
-	P = 1 - {\left(\frac{\alpha\pi R^2}{XY}\right)}^{N-1}
+	P = 1 - {\left(\frac{XY - \alpha\pi R^2}{XY}\right)}^{N-1}
 \end{equation}
 
 We can verify that for \(R\!=\!40m\), \(N\!=\!1250\), \(X\!=\!Y\!=\!500m\), with
 the starting node in the corner (\(\alpha\!=\!\frac{1}{4}\)), we get:
 
 \[
-	P = 1 -
-	{\left(\frac{\frac{1}{4}\pi\cdot40^2}{500\cdot500}\right)}^{1249} \simeq
-	99.4973\%
+	P = 1 - {\left(\frac{500\cdot500 -
+	\frac{1}{4}\pi\cdot40^2}{500\cdot500}\right)}^{1249} \simeq 99.81\%
 \]
 
-which is a quite high probability. Only in just \(\frac{1}{200}\) cases we will
+which is a quite high probability. Only in just \(\frac{1}{500}\) cases we will
 get a coverage equal to zero in the case of the low density scenario with
 \(R\!=\!40m\).

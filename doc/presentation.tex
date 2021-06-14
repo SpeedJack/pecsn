@@ -4,6 +4,7 @@
 \usepackage{booktabs}
 
 \usetheme{Boadilla}
+\setbeamertemplate{navigation symbols}{}
 
 \title{Epidemic Broadcast}
 \subtitle{Performance Evaluation of Computer Systems and Networks}
@@ -72,12 +73,15 @@
 		\begin{description}
 			\item[Valgrind] no memory leaks
 			\item[Graphical] execution inside QTEnv
-			\item[Step-by-Step Debug] code execution path
-			\item[Event Trace] check for correct scheduling
-			\item[Deterministic] same inputs \textrightarrow{} same outputs
+			\item[Step-by-Step Debug] check that the correct code
+				execution path is taken
+			\item[Event Trace] check for correct scheduling of
+				events
+			\item[Deterministic] same inputs \textrightarrow{} same
+				outputs
 			\item[Degeneracy] config with low params values
-			\item[Continuity] input change \textrightarrow{} output
-				change (figure)
+			\item[Continuity] little input change \textrightarrow{}
+				little output change (figure)
 		\end{description}
 		\column{0.5\textwidth}
 		\includegraphics[width=\textwidth]{img/continuity-collisions}
@@ -146,7 +150,9 @@
 		in-depth factorial analysis with the most important factors to
 		study the behaviour between extreme values.
 	\end{block}
-	Jupyter notebooks: analysis automation
+	\begin{center}
+		Jupyter notebooks: analysis automation
+	\end{center}
 \end{frame}
 
 \section{Data analysis}
@@ -154,33 +160,55 @@
 \begin{frame}{High density (\(2^{k}r\))}
     \begin{columns}
 		\column{0.5\textwidth}
-		The coverage always reach high values (\(> 99\%\)), so we don't analyze it in these experiments
+		Coverage always nearly perfect (above \(99\%\))\\[10pt]
+		\begin{tabular}{l | c | cl}
+			Parameter & Factor & Percentage \\
+			\hline \hline
+			Collisions & R & \(66.27\%\) & \(\uparrow\) \\
+				   & m & \(15.76\%\) & \(\uparrow\) \\
+			\hline
+			Messages & m & \(85.98\%\) & \(\uparrow\) \\
+			\hline
+			Broadcast Time & R & \(71.25\%\) & \(\downarrow\) \\
+			& T & \(19.30\%\) & \(\uparrow\) \\
+			\hline
+		\end{tabular}\\[10pt]
+		Excluding coverage (superior limit), we get low unexplained
+		variations; higher for broadcast time (position starting node)
 
-		\begin{table}
-			\begin{tabular}{l | c | c}
-				Parameter & Factor & Percentage \\
-				\hline \hline
-				Collisions & R & \(66.27\%\) \\
-				& m & \(15.76\%\) \\
-				\hline
-				Messages & m & \(85.98\%\) \\
-				\hline
-				Broadcast Time & R & \(71.25\%\) \\
-				& T & \(19.30\%\) \\
-				\hline
-			\end{tabular}
-			\caption{Most influencing factors for parameters}
-		\end{table}
+		To verify the assumption of finite variance for residuals of the
+		broadcast time, a logarithmic transformation is needed: \(y' =
+		\ln(y)\)
 		\column{0.5\textwidth}
-		\begin{figure}
-		    \includegraphics[scale=0.3]{img/marchio_unipi_pant541}
-		    \caption{Image Caption}
-		\end{figure}
+		\includegraphics[width=\textwidth]{img/hd/messages-m-perfplot}
 	\end{columns}
 \end{frame}
 
 \begin{frame}{High density (optimizations)}
-%TODO
+	\begin{columns}
+		\footnotesize
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Good coverage with \(R \ge 8m\)
+			\item Broadcast time can be improved by increasing \(R\)
+				(sacrifice energy efficiency) or by reducing
+				\(T\)
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{img/hd/broadcasttime-R-ffplot}
+		\end{center}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Low \(m\) and high \(\max(\delta)\) reduce the
+				number of collisions without sacrificing
+				anything else
+			\item Good linear relationship between collisions and
+				\(\max(\delta)\)
+		\end{itemize}
+		\begin{center}
+			\includegraphics[width=0.75\textwidth]{img/hd/collisions-D-ffplot}
+		\end{center}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Low density (\(2^{k}r\))}
@@ -217,7 +245,9 @@
 	    \column{0.5\textwidth}
 	        \begin{itemize}
 	        \item The minimum value of R to have a good coverage (\(> 99\%\)) is 25m
-	        \item To improve energy efficiency, we never increase this broadcast radius for the parameter optimization study
+	        \item To improve energy efficiency, we should avoid to increase
+			the broadcast radius (the hear window can be used
+			instead)
 	        \end{itemize}
 	        \begin{center}
 	            \includegraphics[width=0.7\textwidth]{img/ld/messages-R-ffplot.png}
@@ -268,11 +298,11 @@ number of collisions}
 \end{frame}
 
 \begin{frame}{Position of starting node}
-	\footnotesize
 	\begin{columns}
 		\column{0.5\textwidth}
-		\footnotesize The broadcast time is so different changing the initial position of the first user. Note that, seeing the values in order of mean time, the maximum value for a starting position is always lower than the minimum of the following experiment, so the results are well defined
-		\begin{table}
+		The broadcast time changes with the initial position of the
+		first user. In the corner, the mean and the minimum broadcast
+		time are lower than in the center.\\[10pt]
 		\begin{tabular}{lcccc}
 		\multicolumn{5}{c}{Low density (98th percentile broadcast time)}\\
 		\toprule
@@ -283,23 +313,44 @@ number of collisions}
 		Corner & \(65.1s\) & \(2.186952s\) & \(61s\) & \(70s\) \\
 		\bottomrule
 	    \end{tabular}
-	    \end{table}
 		\column{0.5\textwidth}
 		    \begin{center}
-		    \includegraphics[height=0.75\textheight]{img/ld/start-node-coverage.png}
+		    \includegraphics[height=0.7\textheight]{img/ld/start-node-coverage.png}
 		    \end{center}
 	\end{columns}
-	\footnotesize The coverage has a similar mean for center and border starting points, but starting from the border we have also some situations where no users are reached. Starting from the corner we have many situations where no one is infected, this leads to a very large variance
+	The coverage drops down for low values of \(R\) when the position of the
+	starting node is in the corner/border. In this points, we also have
+	higher variance due to catastrophic situations where the network is not
+	able to reach anyone
 \end{frame}
 
 \section{Conclusions}
 
 \begin{frame}{Conclusions}
+	\large
+	\begin{itemize}
+		\item Trade-off needed between broadcast time and energy
+			efficiency on the \(R\) and \(T\) parameters
+		\item Coverage almost always perfect with a good \(R\), except
+			in some catastrophic cases when the starting node is in
+			the corner. The probability to reach at least a user can
+			be computed as:
+			\[
+				P = 1 - {\left(\frac{XY - \alpha\pi R^2}{XY}\right)}^{N-1}
+			\]
+		\item Trickle relaying is very effective to reduce collisions
+			when using low \(m\)
+		\item Shape of the floorplan generally irrelevant: slight
+			increase in the broadcast time
+		\item Position of the starting node, possibly in the center, is
+			very important to have a good coverage and a low
+			broadcast time
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
     \centering
-    \Huge Thank you!
+    \Huge \color{blue} Thank you!
 \end{frame}
 
 \end{document}
