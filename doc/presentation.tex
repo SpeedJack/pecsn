@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
 
@@ -25,7 +25,7 @@
 \begin{frame}
 	\frametitle{The model}
 	\begin{columns}
-		\column{0.5\textwidth}
+		\column{0.6\textwidth}
 		\begin{itemize}
 			\item 2D floorplan with users randomly dropped in
 			\item A random user sends out a message; the other users
@@ -35,7 +35,7 @@
 				message, it waits for \(T\) slots: message
 				relayed if less than \(m\) copies received
 		\end{itemize}
-		\column{0.5\textwidth}
+		\column{0.35\textwidth}
 		\includegraphics[width=\textwidth]{img/snapshot}
 	\end{columns}
 	Modules:
@@ -150,7 +150,7 @@
 		\end{itemize}
 	\end{columns}
 	\begin{block}{Analysis workflow}
-		\(2^{k}r\) to spot most important factors for each index. Then
+		\(2^{k}r\) to spot most important factors for each index. Then,
 		in-depth factorial analysis with the most important factors to
 		study the behaviour between extreme values.
 	\end{block}
@@ -160,16 +160,124 @@
 \section{Analysis}
 
 \begin{frame}
-	\frametitle{High density}
-	Probably each scenario requires 2 slides
+	\frametitle{High density (\(2^{k}r\))}
+    \begin{columns}
+		\column{0.5\textwidth}
+		The coverage always reach high values (\(> 99\%\)), so we don't analyze it in these experiments
+
+		\begin{table}
+			\begin{tabular}{l | c | c}
+				Parameter & Factor & Percentage \\
+				\hline \hline
+				Collisions & R & \(66.27\%\) \\
+				& m & \(15.76\%\) \\
+				\hline
+				Messages & m & \(85.98\%\) \\
+				\hline
+				Broadcast Time & R & \(71.25\%\) \\
+				& T & \(19.30\%\) \\
+				\hline
+			\end{tabular}
+			\caption{Most influencing factors for parameters}
+		\end{table}
+		\column{0.5\textwidth}
+		\begin{figure}
+		    \includegraphics[scale=0.3]{img/marchio_unipi_pant541}
+		    \caption{Image Caption}
+		\end{figure}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Low density}
+	\frametitle{High density (optimizations)}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Low density (\(2^{k}r\))}
+	\begin{columns}
+		\column{0.5\textwidth}
+		Also in this case the coverage always reach high values (\(> 99\%\))
+
+		\begin{table}
+			\begin{tabular}{l | c | c}
+				Parameter & Factor & Percentage \\
+				\hline \hline
+				Collisions & R & \(58.96\%\) \\
+				& m & \(19.26\%\) \\
+				\hline
+				Messages & m & \(85.18\%\) \\
+				\hline
+				Broadcast Time & R & \(58.90\%\) \\
+				& T & \(30.43\%\) \\
+				\hline
+			\end{tabular}
+			\caption{Most influencing factors for parameters}
+		\end{table}
+		\column{0.5\textwidth}
+		\begin{figure}
+		    \includegraphics[height=0.65\textheight]{img/ld/broadcasttime-R-perfplot}
+		    \caption{Increase R reduces so much the broadcast time (but increases the number of collisions and the energy consumed)}
+		\end{figure}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Low density (optimizations)}
+	\footnotesize
+	\begin{columns}
+	    \column{0.5\textwidth}
+	        \begin{itemize}
+	        \item The minimum value of R to have a good coverage (\(> 99\%\)) is 25m
+	        \item To improve energy efficiency, we never increase this broadcast radius for the parameter optimization study
+	        \end{itemize}
+	        \begin{center}
+	            \includegraphics[width=0.7\textwidth]{img/ld/messages-R-ffplot.png}
+	        \end{center}
+	    \column{0.5\textwidth}
+	        \begin{itemize}
+	        \item A low number of max copies implies great benefits for all parameters
+	        \item Trade-off between broadcast time and energy efficiency for the hear window parameter
+	        \end{itemize}
+	        \begin{center}
+	            \includegraphics[width=0.7\textwidth]{img/ld/broadcasttime-T-ffplot.png}
+	        \end{center}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Rectangular floorplan}
+		\begin{columns}
+		\column{0.5\textwidth}
+		 \begin{itemize}
+		     \item
+	Coverage almost always reaches 100\%.The lowest value is 99.6664\%. \\[5pt]
+
+		\begin{table}
+			\begin{tabular}{l | c | c}
+				Parameter & Factor & Percentage \\
+				\hline \hline
+				Collisions & R & \(64.31 \%\) \\
+				& m & \(16.47\%\) \\& Rm& \(9.59 \%\) \\
+				\hline
+				Messages & m & \(84.89\%\) \\& R & \(5.58\%\) \\
+				\hline
+				Broadcast Time & R & \(65.40\%\) \\
+				& T & \(20.58\%\) \\
+				\hline
+			\end{tabular}
+			\caption{Most influencing factors for parameters}
+		\end{table}
+		\item the shape of the plane has a negligible influence, so the obtained results for the optimizations are similar to previous ones
+		\end{itemize}
+		\column{0.5\textwidth}
+				\begin{figure}
+		    \includegraphics[height=0.65\textheight]{img/rect/collisions_m_perfplot.png}
+		    \caption{Decrease the maximum number of copies to decrease the total
+number of collisions}
+		\end{figure}
+
+	\end{columns}
 \end{frame}
 
 \begin{frame}

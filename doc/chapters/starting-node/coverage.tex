@@ -41,19 +41,37 @@ coverage of at least \(97\%\) with \(R\!=\!25m\) in low density conditions,
 while when the starting user is placed at the border or the corner the coverage
 can drop down to zero.
 
-Files \code{low-density.ipynb} and \code{high-density.ipynb} contains the
-analysis of the coverage in the two conditions (low density and high density)
-when the radius is varied from very low values to high values. Data has been
-collected using the configurations named ``StartNodePositionLowDensity'' and
+Files \code{\{low,high\}-density-coverage.ipynb} contain the analysis of the
+coverage in the two conditions (low density and high density) when the radius is
+varied from very low values to high values. Data has been collected using the
+configurations named ``StartNodePositionLowDensity'' and
 ``StartNodePositionHighDensity''.
 
-Figure X shows the results for the low density case\footnote{For easier
-visualization, the Jupyter notebook also contains the same data plotted in three
-different figures rather than with the center, border and corner cases in the
-same plot.}. As we can see, in the ``center'' case the mean coverage starts very
-high even with low values of \(R\): The minimum mean is around \(1150\) (from a
-total of \(1249\) reachable users) and it stabilizes near the value \(1240\)
-for \(R \ge 25m\).
+\figref{subfig:ldstartnodecoverage} shows the results for the low density
+case\footnote{For easier visualization, the Jupyter notebook also contains the
+same data plotted in three different figures rather than with the center, border
+and corner cases in the same plot.}. As we can see, in the ``center'' case the
+mean coverage starts very high even with low values of \(R\): The minimum mean
+is around \(1150\) (from a total of \(1249\) reachable users) and it stabilizes
+near the value \(1240\) for \(R \ge 25m\).
+
+\begin{figure}[hbt]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/ld/start-node-coverage}
+		\caption{Low density scenario}\label{subfig:ldstartnodecoverage}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/hd/start-node-coverage}
+		\caption{High density
+		scenario}\label{subfig:hdstartnodecoverage}
+	\end{subfigure}
+	\caption{For low values of \(R\), the coverage is generally worse if the
+	starting node is in the corner rather than in the
+	center}\label{fig:startnodepositioncoverage}
+\end{figure}
 
 Also in the ``border'' case the coverage stabilizes at high values with \(R \ge
 25m\), but it has very high variance when the broadcast radius is very low and
@@ -66,8 +84,9 @@ variance with \(R\!=\!40m\). As we can see from the table at the end of the
 notebook, this is due to a catastrophic experiment where the starting user has
 not reached any user even with \(R\!=\!40m\).
 
-Figure Y shows the results for the high density scenario. Considerations are the
-same done for the low density scenario, so we will not discuss the results here.
+\figref{subfig:hdstartnodecoverage} shows the results for the high density
+scenario. Considerations are the same done for the low density scenario, so we
+will not discuss the results here.
 
 So, if possible, when designing a network of this type, to guarantee a nearly
 perfect coverage, we should try to ensure that the starting user is near as much
@@ -81,3 +100,31 @@ the entire floorplan immediately. Values found (\(40m\) and \(11m\)) are only an
 \emph{hint} of minimum values that makes \emph{hard} to get a catastrophic
 situation.} the coverage, it is necessary to increase the broadcast radius (\(R
 > 40m\) for low density; \(R > 11m\) for high density).
+
+The probability to found a user inside the area of reachability of the starting
+node \idest{the probability to get a coverage greater than 0} can be easily
+computed, in the general case, with~\eqref{eq:nocatastropheprobability}. The
+equation has been derived by considering the inverse of the probability to found
+\idest{the probability to \emph{not} found any node in the area of reachability,
+which is the probability to found all the nodes in the area outside the area of
+reachability} which is, for a single user, the area of reachability
+(\(\alpha\cdot\pi\cdot R^2\)) divided by the area of the floorplan (\(X\cdot
+Y\)). This probability has been then extended to the case of \(N\) users by
+raising it to the number of users except the first one (\(N-1\)).
+
+\begin{equation}\label{eq:nocatastropheprobability}
+	P = 1 - {\left(\frac{\alpha\pi R^2}{XY}\right)}^{N-1}
+\end{equation}
+
+We can verify that for \(R\!=\!40m\), \(N\!=\!1250\), \(X\!=\!Y\!=\!500m\), with
+the starting node in the corner (\(\alpha\!=\!\frac{1}{4}\)), we get:
+
+\[
+	P = 1 -
+	{\left(\frac{\frac{1}{4}\pi\cdot40^2}{500\cdot500}\right)}^{1249} \simeq
+	99.4973\%
+\]
+
+which is a quite high probability. Only in just \(\frac{1}{200}\) cases we will
+get a coverage equal to zero in the case of the low density scenario with
+\(R\!=\!40m\).

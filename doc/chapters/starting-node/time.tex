@@ -1,1 +1,49 @@
-\section{Total broadcast time}\label{sec:startnodetime}
+\section{Broadcast time}\label{sec:startnodetime}
+
+Files \code{\{low,high\}-density-time.ipynb} contain the analysis for the
+broadcast time needed to reach the 98th percentile of the coverage. The analysis
+has been done fixing all the factors (also \(R\)) and by just varying the
+position of the starting user. Configurations used are
+``StartNodePositionLowDensityTime'' and ``StartNodePositionHighDensityTime''.
+
+We get the results shown in \tableref{table:startnodetimeresults}.
+
+\begin{table}[hbt]
+	\centering
+	\begin{tabular}{lcccc}
+		\multicolumn{5}{c}{Low density (98th percentile broadcast time)}\\
+		\toprule
+		Start Node Pos\@. & Mean & Std\@. Dev\@. & Min\@. & Max\@. \\
+		\midrule
+		Center & \(35.166667s\) & \(1.533158s\) & \(31s\) & \(40s\) \\[16pt]
+		Border & \(53.7s\) & \(1.914554s\) & \(50s\) & \(58s\) \\[16pt]
+		Corner & \(65.1s\) & \(2.186952s\) & \(61s\) & \(70s\) \\
+		\bottomrule
+	\end{tabular}\\[16pt]
+	\begin{tabular}{lcccc}
+		\multicolumn{5}{c}{High density (98th percentile broadcast time)}\\
+		\toprule
+		Start Node Pos\@. & Mean & Std\@. Dev\@. & Min\@. & Max\@. \\
+		\midrule
+		Center & \(32.533333s\) & \(2.161311s\) & \(30s\) & \(39s\) \\[16pt]
+		Border & \(48.666667s\) & \(2.039833s\) & \(45s\) & \(53s\) \\[16pt]
+		Corner & \(57.7s\) & \(1.803254s\) & \(55s\) & \(62s\) \\
+		\bottomrule
+	\end{tabular}
+	\caption{With the starting node at the border or the corner, we get an
+	higher broadcast time compared to the case where the starting node is at
+	the center}\label{table:startnodetimeresults}
+\end{table}
+
+As we can see, as the starting node moves near to the border/corner, we get
+higher values for both the mean broadcast time. This can be explained by the
+fact that, when the starting node is in the corner, the message need to traverse
+the entire length of the floorplan in both its dimensions.  When, instead, it
+starts from the center, since it is sent out radially by the user, the message
+just needs to cover half of the side of the floorplan in each dimension. The
+standard deviation is higher in the corner for the low density scenario but it
+is lower in the high density scenario: a higher number of users leads to a lower
+variance.
+
+So, if possibile, also for the broadcast time, is better to set the starting
+node near the center or, at least, avoid borders and corners of the floorplan.
