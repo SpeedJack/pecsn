@@ -1,1 +1,52 @@
 \chapter{Position of starting node}\label{ch:starting-node}
+
+In the analysis done in \chref{ch:analysis} we have ignored a factor that
+influence the performance of the network: the position in the floorplan of the
+user that sends out the first message (the ``starting user''). To understand why
+this factor is important, see \figref{fig:startnodeexplain}. When the starting
+user (the blue node) is in the center (\figref{subfig:startnodecenter}), the
+message is sent radially in all the directions. In the general case, the ``area
+of reachability'' is equal to \(\alpha\cdot\pi\cdot R^2\) where \(\alpha\) is a
+constant that it is equal to \(1\) when the starting user is in the center;
+\(\frac{1}{2}\) when the starting user is at the border
+(\figref{subfig:startnodeborder}); \(\frac{1}{4}\) when the starting user is in
+the corner (\figref{subfig:startnodecorner}). This may limit the capability of
+the network to reach the full coverage and it may also increase the total
+broadcast time.
+
+\begin{figure}[hbt]
+	\centering
+	\begin{subfigure}{0.25\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/start-node-position-center}
+		\caption{The starting user (blue) placed in the center can reach
+		all the users inside the green
+		area (\(\alpha = 1\))}\label{subfig:startnodecenter}
+	\end{subfigure}
+	\begin{subfigure}{0.35\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/start-node-position-border}
+		\caption{The starting user (blue) placed in the border can reach
+		all the users inside the green
+		area (\(\alpha = \frac{1}{2}\))}\label{subfig:startnodeborder}
+	\end{subfigure}
+	\begin{subfigure}{0.35\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{img/start-node-position-corner}
+		\caption{The starting user (blue) placed in the corner can reach
+		all the users inside the green
+		area (\(\alpha = \frac{1}{4}\))}\label{subfig:startnodecorner}
+	\end{subfigure}
+	\caption{The area of reachability for the first message changes based on
+	where the starting user is placed}\label{fig:startnodeexplain}
+\end{figure}
+
+Of course, the best scenario for both the coverage and the total broadcast time,
+is the one where the starting user is in the center of the floorplan; the worst
+is when the starting user is in the corner.
+
+The Jupyter notebooks used for the analysis of this factor are placed in the
+\code{analysis/StartNode/} folder.
+
+\input{starting-node/coverage}
+\input{starting-node/time}
