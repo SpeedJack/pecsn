@@ -2,22 +2,20 @@
 
 As in the case of high density, the scatter plots for the variance of the
 residuals of the total number of collisions and the total number of messages
-sent don't show trends, only a step in the right of the message plot (but with
-residuals one order of magnitude less than the predicted response). So we can
-conclude that the assumption of finite variance is still valid.
+sent don't show trends, it is only higher in the right of the plot for the
+number of messages, but with residuals one order of magnitude less than the
+predicted response. So we can conclude that the assumption of finite variance
+is still valid.
 
 As for the high density, to verify the assumption for the residuals of the 99th
 percentile of the total broadcast time we need to perform a logarithmic
 transformation of the predicted variable. The result is shown in
 \figref{fig:ldtimevariance}.
 
-\begin{figure}[htb]
+\begin{figure}[hbt]
 	\centering
-	\includegraphics[width=0.37\textwidth]{img/ld/broadcasttime-variance-transform}
+	\includegraphics[width=0.6\textwidth]{img/ld/broadcasttime-variance-transform}
 	\caption{Scatter plot of the variance of the residuals of the total
 	broadcast time. No trend is shown after the logarithmic
 	transformation}\label{fig:ldtimevariance}
 \end{figure}
-
-So, in order to meet the requirement of finite variance for the residuals of the
-total broadcast time, a transformed model is needed: \(y' = \ln(y)\).

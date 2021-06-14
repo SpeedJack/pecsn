@@ -1,5 +1,8 @@
 \documentclass[aspectratio=169]{beamer}
 
+\usepackage{makecell}
+\usepackage{booktabs}
+
 \usetheme{Boadilla}
 
 \title{Epidemic Broadcast}
@@ -14,16 +17,9 @@
 	\titlepage{}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Outline}
-	\tableofcontents
-	TODO\@: remove this slide
-\end{frame}
-
 \section{Simulation model}
 
-\begin{frame}
-	\frametitle{The model}
+\begin{frame}{The model}
 	\begin{columns}
 		\column{0.6\textwidth}
 		\begin{itemize}
@@ -48,8 +44,7 @@
 	\end{description}
 \end{frame}
 
-\begin{frame}
-	\frametitle{User module}
+\begin{frame}{User module}
 	\begin{columns}
 		\column{0.5\textwidth}
 		Finite State Machine
@@ -71,8 +66,7 @@
 	received in current slot
 \end{frame}
 
-\begin{frame}
-	\frametitle{Model verification}
+\begin{frame}{Model verification}
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{description}
@@ -92,8 +86,7 @@
 
 \section{Experiments design}
 
-\begin{frame}
-	\frametitle{Factors and Indexes}
+\begin{frame}{Factors and Indexes}
 	\begin{columns}
 		\column{0.5\textwidth}
 		Performance indexes:
@@ -125,8 +118,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Scenarios}
+\begin{frame}{Scenarios}
 	\begin{columns}
 		\column{0.65\textwidth}
 		\begin{description}
@@ -157,10 +149,9 @@
 	Jupyter notebooks: analysis automation
 \end{frame}
 
-\section{Analysis}
+\section{Data analysis}
 
-\begin{frame}
-	\frametitle{High density (\(2^{k}r\))}
+\begin{frame}{High density (\(2^{k}r\))}
     \begin{columns}
 		\column{0.5\textwidth}
 		The coverage always reach high values (\(> 99\%\)), so we don't analyze it in these experiments
@@ -188,13 +179,11 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{High density (optimizations)}
-
+\begin{frame}{High density (optimizations)}
+%TODO
 \end{frame}
 
-\begin{frame}
-	\frametitle{Low density (\(2^{k}r\))}
+\begin{frame}{Low density (\(2^{k}r\))}
 	\begin{columns}
 		\column{0.5\textwidth}
 		Also in this case the coverage always reach high values (\(> 99\%\))
@@ -222,8 +211,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Low density (optimizations)}
+\begin{frame}{Low density (optimizations)}
 	\footnotesize
 	\begin{columns}
 	    \column{0.5\textwidth}
@@ -245,8 +233,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Rectangular floorplan}
+\begin{frame}{Rectangular floorplan}
 		\begin{columns}
 		\column{0.5\textwidth}
 		 \begin{itemize}
@@ -280,170 +267,39 @@ number of collisions}
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Position of starting node}
+\begin{frame}{Position of starting node}
+	\footnotesize
+	\begin{columns}
+		\column{0.5\textwidth}
+		\footnotesize The broadcast time is so different changing the initial position of the first user. Note that, seeing the values in order of mean time, the maximum value for a starting position is always lower than the minimum of the following experiment, so the results are well defined
+		\begin{table}
+		\begin{tabular}{lcccc}
+		\multicolumn{5}{c}{Low density (98th percentile broadcast time)}\\
+		\toprule
+		Start Node Pos\@. & Mean & Std\@. Dev\@. & Min\@. & Max\@. \\
+		\midrule
+		Center & \(35.166667s\) & \(1.533158s\) & \(31s\) & \(40s\) \\
+		Border & \(53.7s\) & \(1.914554s\) & \(50s\) & \(58s\) \\
+		Corner & \(65.1s\) & \(2.186952s\) & \(61s\) & \(70s\) \\
+		\bottomrule
+	    \end{tabular}
+	    \end{table}
+		\column{0.5\textwidth}
+		    \begin{center}
+		    \includegraphics[height=0.75\textheight]{img/ld/start-node-coverage.png}
+		    \end{center}
+	\end{columns}
+	\footnotesize The coverage has a similar mean for center and border starting points, but starting from the border we have also some situations where no users are reached. Starting from the corner we have many situations where no one is infected, this leads to a very large variance
 \end{frame}
 
 \section{Conclusions}
-\begin{frame}
-	\frametitle{Conclusions}
-\end{frame}
 
-\section{Some Stuff}
-
-\begin{frame}
-	\frametitle{Lists}
-	\begin{enumerate}
-		\item Point A
-		\item Point B
-		\begin{description}
-			\item[Something] This is something
-			\item[Foo] This is foo
-		\end{description}
-		\item Point C
-		\begin{itemize}
-			\item First item
-			\item Second item
-		\end{itemize}
-		\item Point D
-	\end{enumerate}
+\begin{frame}{Conclusions}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Columns, Tables, Images}
-	\begin{columns}
-		\column{0.5\textwidth}
-		This is some text.
-
-		Second line of left text.
-
-		\begin{table}
-			\begin{tabular}{l | c | c}
-				First column & Second & Third \\
-				\hline \hline
-				Something & 110 & 123 \\
-				Second Row & abc & def
-			\end{tabular}
-			\caption{Some data}
-		\end{table}
-		\column{0.5\textwidth}
-		An image.
-
-		\includegraphics[scale=0.2]{img/marchio_unipi_pant541}
-	\end{columns}
+    \centering
+    \Huge Thank you!
 \end{frame}
-
-\section{Blocks}
-
-\begin{frame}
-	\frametitle{Basic Blocks}
-	\begin{block}{Block Title}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
-	\end{block}
-	\begin{alertblock}{Alert Title}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
-	\end{alertblock}
-	\begin{definition}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
-	\end{definition}
-	\begin{example}
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-		eiusmod tempor incididunt ut labore et	dolore magna aliqua.
-	\end{example}
-\end{frame}
-
-\subsection{Other Blocks}
-
-\begin{frame}
-	\frametitle{Math Blocks}
-	\begin{theorem}{Pythagora}
-		\( a^2 + b^2 = c^2 \)
-	\end{theorem}
-	\begin{corollary}
-		\( x + y = y + x \)
-	\end{corollary}
-	\begin{proof}
-		\( \omega + \phi = \epsilon \)
-
-		\( \alpha + \beta = \frac{5}{7} \)
-	\end{proof}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Code Blocks}
-	\begin{semiverbatim}
-		#include <stdio.h>
-
-		int main ()
-		\{
-			printf("Hello World!\\n");
-			return 0;
-		\}
-	\end{semiverbatim}
-\end{frame}
-
-\section{Animations}
-
-\subsection{Pause}
-
-\begin{frame}
-	\frametitle{Pause}
-	\begin{itemize}
-		\pause{}
-		\item Point A
-		\pause{}
-		\item Point B
-		\begin{itemize}
-			\pause{}
-			\item part 1
-			\pause{}
-			\item part 2
-		\end{itemize}
-		\pause{}
-		\item Point C
-			\pause{}
-		\item Point D
-	\end{itemize}
-\end{frame}
-
-\subsection{Overlays}
-
-\begin{frame}
-	\frametitle{Overlays}
-	\textbf<2>{Example Text}\\
-	\textit<2>{Example Text}\\
-	\textsl<2>{Example Text}\\
-	\textrm<2>{Example Text}\\
-	\textsf<2>{Example Text}\\
-	\textcolor<2>{orange}{Example Text}\\
-	\alert<2>{Example Text}\\
-	\structure<2>{Example Text}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Overlays (invisible)}
-	\onslide<1->{First Line of Text}
-
-	\onslide<2->{Second Line of Text}
-
-	\onslide<3->{Third Line of Text}
-\end{frame}
-
-\setbeamercovered{transparent}
-
-\begin{frame}
-	\frametitle{Overlays (transparent)}
-	\onslide<1->{First Line of Text}
-
-	\onslide<2->{Second Line of Text}
-
-	\onslide<3->{Third Line of Text}
-
-\end{frame}
-
-\setbeamercovered{invisible}
 
 \end{document}

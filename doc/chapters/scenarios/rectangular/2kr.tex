@@ -2,10 +2,7 @@
 analysis}\label{subsec:rect2kr}
 
 Analysis performed with \(k\!=\!4\) and \(r\!=\!10\), for a total of \(2^4 \cdot
-10 \!=\!160\) experiments. The performance indexes evaluated are the one defined
-in \secref{sec:indexes}. When we talk about the total number of messages sent
-remember that we are analyzing the \emph{energy efficiency} (\(\mathit{Eff}\))
-of the network.
+10 \!=\!160\) experiments.
 
 The simulation configuration for this analysis, named ``Rectangular2kr'' can be
 found in the \code{simulations.ini} file. The simulations have been run using
@@ -14,15 +11,12 @@ our \code{simulate.sh} script with the following command:
 $ ./simulate.sh -s Rectangular -c Rectangular2kr
 \end{verbatim}
 
-We note that the users density of this configuration is the same as the one of
-the low density scenario. So we will compare the results obtained mainly with
-the scenario analyzed in \secref{sec:low-density}.
+We note that the user density of this configuration is the same as the one of
+the high density scenario. So we will compare the results obtained mainly with
+the scenario analyzed in \secref{sec:high-density}.
 
 First, we have verified that the range of values for the \code{maxCopies}
 parameter (2--6) was fine. The analysis can be found in \code{histograms.ipynb}.
-Here, we just check that with \(m\!=\!2\) and \(m\!=\!2\) we get that a lot of
-users decide to not relay the message in the first case and only a small bunch
-of users decide to not relay the message in the second case.
 
 Then, the 2\textsuperscript{k}r analysis can be found in \code{2kr.ipynb}. We
 will verify the assumptions of normality, independence and finite variance for
