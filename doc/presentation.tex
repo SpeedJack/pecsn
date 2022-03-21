@@ -162,7 +162,7 @@
 		\column{0.5\textwidth}
 		Coverage always nearly perfect (above \(99\%\))\\[10pt]
 		\begin{tabular}{l | c | cl}
-			Parameter & Factor & Percentage \\
+			KPI & Factor & Percentage \\
 			\hline \hline
 			Collisions & R & \(66.27\%\) & \(\uparrow\) \\
 				   & m & \(15.76\%\) & \(\uparrow\) \\
@@ -218,7 +218,7 @@
 
 		\begin{table}
 			\begin{tabular}{l | c | c}
-				Parameter & Factor & Percentage \\
+				KPI & Factor & Percentage \\
 				\hline \hline
 				Collisions & R & \(58.96\%\) \\
 				& m & \(19.26\%\) \\
@@ -245,9 +245,9 @@
 	    \column{0.5\textwidth}
 	        \begin{itemize}
 	        \item The minimum value of R to have a good coverage (\(> 99\%\)) is 25m
-	        \item To improve energy efficiency, we should avoid to increase
-			the broadcast radius (the hear window can be used
-			instead)
+	        \item To improve energy efficiency, avoid to increase
+			the broadcast radius (T can be increase
+			instead). This also reduces the number of collisions
 	        \end{itemize}
 	        \begin{center}
 	            \includegraphics[width=0.7\textwidth]{img/ld/messages-R-ffplot.png}
@@ -263,7 +263,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Rectangular floorplan}
+\begin{frame}{Rectangular  (\(2^{k}r\))}
 		\begin{columns}
 		\column{0.5\textwidth}
 		 \begin{itemize}
@@ -272,7 +272,7 @@
 
 		\begin{table}
 			\begin{tabular}{l | c | c}
-				Parameter & Factor & Percentage \\
+				KPI & Factor & Percentage \\
 				\hline \hline
 				Collisions & R & \(64.31 \%\) \\
 				& m & \(16.47\%\) \\& Rm& \(9.59 \%\) \\
@@ -302,7 +302,7 @@ number of collisions}
 		\column{0.5\textwidth}
 		The broadcast time changes with the initial position of the
 		first user. In the corner, the mean and the minimum broadcast
-		time are lower than in the center.\\[10pt]
+		time are higher than in the center and in the border.\\[10pt]
 		\begin{tabular}{lcccc}
 		\multicolumn{5}{c}{Low density (98th percentile broadcast time)}\\
 		\toprule
